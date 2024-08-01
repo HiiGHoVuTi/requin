@@ -29,7 +29,7 @@
 
 #pagebreak()
 // SOMMAIRE
-#outline(title: "Sommaire")
+#outline(title: "Sommaire", depth: 2)
 
 #let question(n, score, setup, question, indication, correction) = [
 
