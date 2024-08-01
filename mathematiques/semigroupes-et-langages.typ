@@ -14,7 +14,7 @@ $ forall x in EE, x e = e x = x $
 On dira enfin que $EE$ est un _groupe_ si il existe $dot^(-1) : EE -> EE$ tel que
 $ forall x in EE, x x^(-1) = x^(-1) x = e $
 ][
-Donner un groupe, puis un monïde qui n'est pas un groupe, et enfin un demi-groupe qui n'est pas un monoïde.
+Donner un groupe, puis un monoïde qui n'est pas un groupe, et enfin un demi-groupe qui n'est pas un monoïde.
 ][][]
 
 #question(1, 1)[ 
@@ -64,7 +64,9 @@ Donner un algorithme satisfaisant une requête.
 
 #question(8, 3)[Moyennant un précalcul, ][
 Donnez un algorithme efficace satisfaisant une requête en temps $cal(O)(q log r)$
-][][]
+][
+  On pourra introduire un ensemble de fonctions similaire à $cal(A)$ agissant sur l'automate
+][]
 
 #question(9, 3)[
 Une _modification_ est une opération de la forme $M[i] <- a$ avec $a in Sigma$.
