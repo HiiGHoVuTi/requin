@@ -1,6 +1,6 @@
 #let main(question) = [
 
-== Un peu de théorie
+== Monoïdes libres, langages et actions
 
 === Demi-groupes, monoïdes et groupes
 
