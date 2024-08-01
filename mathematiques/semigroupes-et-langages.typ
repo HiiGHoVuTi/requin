@@ -63,7 +63,7 @@ Donner un algorithme satisfaisant une requête.
 ][][]
 
 #question(8, 3)[Moyennant un précalcul, ][
-Donnez un algorithme efficace satisfaisant une requête en temps $cal(O)(q log r)$
+Donnez un algorithme efficace satisfaisant une requête en temps $cal(O)(1)$
 ][
   On pourra introduire un ensemble de fonctions similaire à $cal(A)$ agissant sur l'automate
 ][]
