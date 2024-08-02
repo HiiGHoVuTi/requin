@@ -86,7 +86,7 @@ function romanise (num) {
       [Problème #roman.#nums.at(1):]
     } 
     else {
-      numbering(subproblems, ..nums)
+      numbering(subproblems, ..(..nums).slice(2))
     }
 })
 
@@ -101,9 +101,13 @@ function romanise (num) {
 #set page(
   numbering: "1",
   header: context {
+    
+  let elems = query(selector(heading.where(level: 1)).before(here()),)
+  let chapter = if elems.len() == 0 { [Sommaire] } else  {elems.last().body }
+
   if counter(page).get().first() > 1 [
     #set text(style: "italic", size: 12pt)
-    #title -- CODA METS LE CHAPITRE ACTUEL
+    #title -- #chapter
     #h(1fr)
     #author
     // #h(1fr)
@@ -112,6 +116,7 @@ function romanise (num) {
   ]
 }, 
 footer: context {
+  set text(size: 12pt)
   block(line(length: 100%, stroke: 0.5pt), above: 0.6em)
   "Page "; counter(page).display("1/1", both: true)
   h(1fr)

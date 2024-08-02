@@ -1,5 +1,5 @@
-
 #import "template.typ": pset
+#import "lib.typ": *
 
 
 #show: pset.with(
@@ -12,88 +12,84 @@
 #import "@preview/codly:1.0.0": *
 #show: codly-init.with()
 
-#let solutions = false
 
-#let grandTitre(titre, sousTitre) = [
- #v(1fr)
+// -------------------- PREMIERE PAGE --------------------
+#v(1fr)
 #align(center)[
   #text(size: 30pt)[REQUIN]
-
-  #text(size: 20pt)[*re*\cueil de *qu*\estions d'*in*\formatique]
+  #v(10pt)
+  #text(size: 20pt)[*RE*\cueil de *QU*\estions d'*IN*\formatique]
 ]
 #v(1fr)
-]
-
-// PREMIERE PAGE
-#grandTitre("REQUIN", [*re*\cueil de *qu*\estions d'*in*\formatique])
 
 #pagebreak()
-// SOMMAIRE
-#outline(title: "Sommaire", depth: 2)
 
-#let question(n, score, setup, question, indication, correction) = [
-
-  #setup
-
-  #n. _#question _ #h(1fr) 
-  #array.range(5).map(i => if i < score {$star.filled$} else {$star.stroked$}).sum()
-
-  #if indication != none {
-    h(5%) 
-    indication
-  }
-
-  #if solutions {
-    line(length: 100%)
-    correction
-  }
-]
-
-#let fichier(nom) = context {
-  import(nom) as file
-  file.main(question)
-  // if counter(page).get().at(0) < counter(page).final().at(0) {
-  //   pagebreak()
-  // }
+// -------------------- SOMMAIRE --------------------
+#show outline.entry.where(
+  level: 1
+): it => {
+  v(12pt, weak: true)
+  strong(it)
 }
-
-#let chapitre(nom, body) = {[
-#pagebreak()
-#v(1fr)
-#align(center, [
-#set text(size: 20pt)
-= #nom
-])
-#v(1fr)
-#pagebreak()
-#body
-]}
+#outline(title: "Sommaire", depth: 2, indent: 10pt)
 
 
-#chapitre("Algorithmique")[
-  _c'est si vide ici..._
+
+
+
+// -------------------- FORMAT HEADINGS --------------------
+#show heading.where(level: 1): name => [
+  #pagebreak()
+  #v(1fr)
+  #align(center, [
+    #text(size: 20pt)[#name]
+  ])
+  #v(1fr)
 ]
-#chapitre("Arbres & Graphes")[
-  _c'est si vide ici..._
+#show heading.where(level: 2): name => [
+  #pagebreak()
+  #setup_ex()
+  #align(center, [
+    #set text(size: 1.2em)
+    * #name * 
+  ])
 ]
-#chapitre("Langages formels")[
-  _c'est si vide ici..._
-]
-#chapitre("Théorie des jeux")[
-  _c'est si vide ici..._
-]
-#chapitre("Calculabilité")[
-  _c'est si vide ici..._
-]
-#chapitre("Logique")[
-  _c'est si vide ici..._
-]
-#chapitre("Langages fonctionnels")[
-  _c'est si vide ici..._
-]
-#chapitre("Mathématiques pour l'informatique")[
-  #fichier("mathematiques/semigroupes-et-langages.typ")
-]
+
+= Algorithmique
+_c'est si vide ici..._
+
+
+= Arbres & Graphes
+== Mots univers
+#include "graph/univers.typ"
+
+= Langages formels
+== Language permuté et inclusions
+#include "lang/inclusions.typ"
+== Language continuables
+#include "lang/continuables.typ"
+== Puissance et racine de languages
+#include "lang/pow_sqrt.typ"
+
+
+= Théorie des jeux
+== Nim à choix
+#include "jeux/nim_set.typ"
+
+= Calculabilité
+== Calculabilité et représentation d'ensembles infinis
+#include "calc/ens_fct.typ"
+
+= Logique
+== Compacité
+#include "log/compacite.typ"
+
+= Langages fonctionnels
+
+= Mathématiques pour l'informatique
+== Monoïdes libres, langages et actions
+#include "math/semigroupes-et-langages.typ"
+
 
 
 // #question(3, "Soit A un automate", "Pourquoi", "feur", "parce que")
