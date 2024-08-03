@@ -62,6 +62,8 @@
 #include "graph/bipartition.typ"
 == Théorème de Tùran
 #include "graph/tùran.typ"
+== Coloration d'aretes
+#include "graph/col_arr.typ"
 
 = Langages formels
 == Language permuté et inclusions
