@@ -1,4 +1,5 @@
 #import "../lib.typ": *
+#show heading: heading_fct
 
 Soit $Sigma$ un alphabet. Pour $w in Sigma^*$ un mot et $alpha in Sigma$ une lettre, on note $|w|_alpha$ le nombre d’occurrence de $alpha$ dans $w$. Pour $L$ un langage sur $Sigma$, on pose $sigma(L) = {w in Sigma^* | exists u in L, forall alpha in Sigma, |u|_alpha = |w|_alpha}$ la _permutation_ de $L$.
 

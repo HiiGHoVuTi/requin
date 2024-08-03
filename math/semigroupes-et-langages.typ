@@ -1,4 +1,5 @@
 #import "../lib.typ": *
+#show heading: heading_fct
 
 
 === Demi-groupes, monoïdes et groupes

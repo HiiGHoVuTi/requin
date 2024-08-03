@@ -1,5 +1,6 @@
 #let show_correct = false
 
+
 #let q_count = counter("questions")
 
 #let setup_ex() = {
@@ -14,6 +15,32 @@
   "emojis/dragon.svg",
   "emojis/biohazard.svg",
 ).map(x => box(image(x)))
+
+// ---- headings ----
+#let heading_fct(it) = {
+  let numb = counter(heading).display(it.numbering)
+  if (it.level == 1) [
+    #pagebreak()
+    #v(1fr)
+    #align(center, [
+      #text(size: 20pt)[#numb #it.body]
+    ])
+    #v(1fr)
+  ] else if (it.level == 2) [
+    #pagebreak()
+    #setup_ex()
+    #align(center, [
+      #set text(size: 1.2em)
+      * #numb #it.body * 
+    ])
+  ] else [
+    #set text(size: 1.2em)
+    * #numb #it.body * 
+  ]
+}
+#show heading: heading_fct
+
+
 
 
 #let question(score, question) = {

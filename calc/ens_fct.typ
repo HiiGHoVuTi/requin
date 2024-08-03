@@ -1,4 +1,5 @@
 #import "../lib.typ": *
+#show heading: heading_fct
 
 On se propose ici de créer une structure de donnée permettant de représenter un ensemble infini sous la forme d’une fonction de `'a -> bool` déterministe et qui *termine toujours*. On fixe dans cet exercice $X$ un ensemble quelconque. On défini donc le type suivant en OCaml :
 

@@ -9,6 +9,7 @@
   // collaborators: ("Ben Bitdiddle", "Louis Reasoner")
 )
 
+
 #import "@preview/codly:1.0.0": *
 #show: codly-init.with()
 
@@ -47,27 +48,8 @@
 }
 #outline(title: "Sommaire", depth: 2, indent: 10pt)
 
-
-
-
-
-// -------------------- FORMAT HEADINGS --------------------
-#show heading.where(level: 1): name => [
-  #pagebreak()
-  #v(1fr)
-  #align(center, [
-    #text(size: 20pt)[#name]
-  ])
-  #v(1fr)
-]
-#show heading.where(level: 2): name => [
-  #pagebreak()
-  #setup_ex()
-  #align(center, [
-    #set text(size: 1.2em)
-    * #name * 
-  ])
-]
+// setup heading to the custom one
+#show heading: heading_fct
 
 = Algorithmique
 == Fenêtre glissante

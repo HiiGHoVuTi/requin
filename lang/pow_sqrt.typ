@@ -1,4 +1,5 @@
 #import "../lib.typ": *
+#show heading: heading_fct
 
 Soit $Sigma$ un alphabet possédant au moins 2 lettres. Pour $L$ un langage sur $Sigma$ et $k>1$ on pose
 

@@ -1,4 +1,5 @@
 #import "../lib.typ": *
+#show heading: heading_fct
 
 Soit $A subset.eq NN^*$ avec $1 in A$.
 On considère un jeu à deux joueurs où $N>0$ objets sont disposés sur une table, et chaque joueur doit à tour de rôle retirer $t in A_(>N)$ objets de la table. Le joueur qui retire le dernier objet perd.

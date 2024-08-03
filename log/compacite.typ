@@ -1,4 +1,5 @@
 #import "../lib.typ": *
+#show heading: heading_fct
 
 Pour $A$ un ensemble de formules de la logique propositionnelle, on dit qu'une valuation $mu$ _satisfait_ $A$ si $forall F in A, mu tack.double F$. On note cela $mu tack.double A$.
 

@@ -1,4 +1,5 @@
-#import "../lib.typ" : *
+#import "../lib.typ": *
+#show heading: heading_fct
 
 
 Soit un _demi-groupe_ $(S, +)$, c'est-à-dire que

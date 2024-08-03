@@ -1,4 +1,5 @@
 #import "../lib.typ": *
+#show heading: heading_fct
 
 Soit $Sigma = {a,b}$. On dit que $w in Sigma^*$ est _primitif_ s’il n’existe pas de mot $u in Sigma^*$ et de $p>1$ tels que $w=u^p$
 

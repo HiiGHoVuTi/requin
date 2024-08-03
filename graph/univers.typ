@@ -1,5 +1,6 @@
 #import "@preview/diagraph:0.2.1": *
 #import "../lib.typ": *
+#show heading: heading_fct
 
 On dit qu'un mot $w in Sigma^*$ est $n$-univers si tout les mots de $Sigma^n$ sont des facteurs de $w$. On s'intéresse à créer les plus petits mots $n$-univers.
 

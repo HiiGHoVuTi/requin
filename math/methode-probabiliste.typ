@@ -1,4 +1,5 @@
-#import "../lib.typ" : *
+#import "../lib.typ": *
+#show heading: heading_fct
 
 === Le lemme
 
