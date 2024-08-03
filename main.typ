@@ -23,13 +23,20 @@
 
 #pagebreak()
 
-*Niveaux de difficultées*
-- #levels_emojis.at(0) : Question d'introduction. Prend entre quelques secondes et 1 minutes. Faisable de tete, il s'agit souvent de trouver un exemple ou un contre-exemple.
-- #levels_emojis.at(1) : Question demandant des méthodes classique, mais sans autre difficulté apparante. Très bien pour réviser le cours.
-- #levels_emojis.at(2) : Question relativement difficile, qui peut nécessiter un peu de travail et/ou des astuces relativement classique. Toutefois, avec un peu de persévérance, tout le monde y est capable. Très bien pour réviser des exercices. Il est fortement conseiller de les poser sur feuille.
-- #levels_emojis.at(3) : Question difficile du sujet, qui peut prendre entre une dizaine de minute pour les plus fort et plusieurs heures. Parfois, elles demandent de sortir des astuces peu communes. On ce doit de les poser sur feuille.
-- #levels_emojis.at(4) : Questions très très difficilles demandant beaucoup de recherche / connaissances externes. Demande plusieurs jours de travail.
-- #levels_emojis.at(5) : Questions ouvertes à la connaissance des autrices.
+*Niveaux de difficulté*
+// - #levels_emojis.at(0) : Question d'introduction. Prend entre quelques secondes et 1 minutes. Faisable de tete, il s'agit souvent de trouver un exemple ou un contre-exemple.
+// - #levels_emojis.at(1) : Question demandant des méthodes classique, mais sans autre difficulté apparante. Très bien pour réviser le cours.
+// - #levels_emojis.at(2) : Question relativement difficile, qui peut nécessiter un peu de travail et/ou des astuces relativement classique. Toutefois, avec un peu de persévérance, tout le monde y est capable. Très bien pour réviser des exercices. Il est fortement conseiller de les poser sur feuille.
+// - #levels_emojis.at(3) : Question difficile du sujet, qui peut prendre entre une dizaine de minute pour les plus fort et plusieurs heures. Parfois, elles demandent de sortir des astuces peu communes. On ce doit de les poser sur feuille.
+// - #levels_emojis.at(4) : Questions très très difficilles demandant beaucoup de recherche / connaissances externes. Demande plusieurs jours de travail.
+// - #levels_emojis.at(5) : Questions ouvertes à la connaissance des autrices.
+
+- #levels_emojis.at(0) : Question d'introduction servant à s'approprier l'énoncé
+- #levels_emojis.at(1) : Question classique ou pouvant être résolue en déroulant une méthode simple
+- #levels_emojis.at(2) : Question nécessitant un raisonnement plus complet ou une astuce, mais à la portée de tous
+- #levels_emojis.at(3) : Question difficile du sujet demandant une réflexion posée ou une bonne intuition
+- #levels_emojis.at(4) : Question très difficile pour les plus courageux qui n'ont pas peur de réfléchir longtemps
+- #levels_emojis.at(5) : Question ouverte à la connaissance des autrices
 
 // -------------------- SOMMAIRE --------------------
 #show outline.entry.where(
@@ -97,6 +104,3 @@ _c'est si vide ici..._
 == Monoïdes libres, langages et actions
 #include "math/semigroupes-et-langages.typ"
 
-
-
-// #question(3, "Soit A un automate", "Pourquoi", "feur", "parce que")
