@@ -76,6 +76,8 @@
 = Arbres & Graphes
 == Mots univers
 #include "graph/univers.typ"
+== Bipartition induite
+#include "graph/bipartition.typ"
 == Théorème de Tùran
 #include "graph/tùran.typ"
 
@@ -91,6 +93,8 @@
 = Théorie des jeux
 == Nim à choix
 #include "jeux/nim_set.typ"
+== ChipLiar Game
+#include "jeux/chip-liar.typ"
 
 = Calculabilité
 == Calculabilité et représentation d'ensembles infinis

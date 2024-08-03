@@ -23,7 +23,13 @@ Pour $v$ un sommet du graphe, note $A_v$ la variable aléatoire indicatrice de l
 On pose $d : S -> NN$ la fonction qui à un sommet associe son degré.
 
 #question(2)[
-  Montrer que $G$ admet un stable $H$ de taille $ |H| = sum_(v in S) 1/(1+d(v)) $
+  Montrer que $G$ admet un stable $H$ de taille $ |H| = sum_(v in S) 1/(1+d(v)) $.
+]
+
+Soit $d_m$ le degré moyen d'un sommet de $G$.
+
+#question(1)[
+  En déduire que $G$ admet un stable de taille $ |S|/(1+d_m) $.
 ]
 
 === Théorème de Tùran
