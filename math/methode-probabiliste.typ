@@ -39,7 +39,7 @@ On note ensuite $H := G[S^dagger]$ et $overline(H) := overline(G)[S^dagger]$.
 
 Soit $M in cal(M)_n (NN)$ telle que tout $k in [|1, n|]$ apparaît exactement $n$ fois dans $M$.
 
-#question(3)[
+#question(2)[
   Montrer qu'il existe une ligne ou une colonne contenant au moins $sqrt(n)$ valeurs distinctes.
 ]
 
@@ -65,5 +65,5 @@ La propriété à laquelle on s'intéresse ici est la _propriété de distance_ 
 On pose enfin $cal(P)(n) := forall A in frak(P)(CC), med |A| ==> (exists { a_1...a_k } subset A, med cal(D)(a_1...a_k))$
 
 #question(4)[
-  Montrer $forall n, cal(P)(n)$.
+  Calculer $inf {n in NN, cal(P)(n) }$.
 ]
