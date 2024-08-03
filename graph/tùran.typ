@@ -1,5 +1,4 @@
 #import "../lib.typ": *
-#show heading: heading_fct
 
 Dans cet énoncé, un _stable_ désigne un sous-graphe complètement déconnecté. Un stable est _localement maximal_ si tous les autres sommets sont connectés à celui-ci. 
 
@@ -30,7 +29,7 @@ On pose $d : S -> NN$ la fonction qui à un sommet associe son degré.
 Soit $d_m$ le degré moyen d'un sommet de $G$.
 
 #question(1)[
-  En déduire que $G$ admet un stable de taille $ |S|/(1+d_m) $.
+  En déduire que $G$ admet un stable de taille $(|S|)/(1+d_m) $.
 ]
 
 === Théorème de Tùran
