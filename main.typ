@@ -76,6 +76,8 @@ _c'est si vide ici..._
 = Arbres & Graphes
 == Mots univers
 #include "graph/univers.typ"
+== Théorème de Tùran
+#include "graph/tùran.typ"
 
 = Langages formels
 == Language permuté et inclusions
@@ -103,4 +105,6 @@ _c'est si vide ici..._
 = Mathématiques pour l'informatique
 == Monoïdes libres, langages et actions
 #include "math/semigroupes-et-langages.typ"
+== Méthode probabiliste
+#include "math/methode-probabiliste.typ"
 
