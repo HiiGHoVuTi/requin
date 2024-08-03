@@ -4,7 +4,7 @@ On considère un plateau à $k+1$ cases avec $n$ jetons initialement placés sur
 
 === Déroulement d'une partie
 
-Une partie dure $r in NN$ reprise, et chaque reprise se déroule suivant:
+Une partie dure $r in NN$ reprises, et chaque reprise se déroule suivant:
 - Le joueur $suit.club$ donne une partie $J$ des jetons en jeu
 - Le joueur $suit.diamond$ choisit un ensemble $J^dagger$ de jetons à déplacer parmi ${J, J^c}$
 - Tous les jetons de $J^dagger$ sont déplacés vers la gauche
