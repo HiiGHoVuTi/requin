@@ -1,4 +1,5 @@
 #import "../lib.typ" : *
+#show heading: heading_fct
 
 Soit $G = (S,A)$ un graphe puis $phi : A -> {mono(R), mono(B)}$. On note $r$ le nombre d'arêtes rouges ($mono(R)$).
 

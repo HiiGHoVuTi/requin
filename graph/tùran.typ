@@ -1,4 +1,5 @@
 #import "../lib.typ": *
+#show heading: heading_fct
 
 Dans cet énoncé, un _stable_ désigne un sous-graphe complètement déconnecté. Un stable est _localement maximal_ si tous les autres sommets sont connectés à celui-ci. 
 
