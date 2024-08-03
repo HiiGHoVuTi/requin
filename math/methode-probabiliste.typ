@@ -17,7 +17,7 @@ Alors on définit $"cr"(G) := min "cr"(overline(G))$.
 D'après _la formule d'Euler_, pour tout graphe $H$, $"cr"(H) >= m(H) - 3n(H)$.
 
 On note $S^dagger subset S$ une partie aléatoire de $S$ où chaque sommet est choisi avec une probabilité $p$.
-On note ensuite $H := G[S]$ et $overline(H) := overline(G)[S]$.
+On note ensuite $H := G[S^dagger]$ et $overline(H) := overline(G)[S^dagger]$.
 
 #question(0)[
   Montrer que $"cr"(overline(H)) >= m(H) - 3 n(H)$.
@@ -45,10 +45,13 @@ Soit $M in cal(M)_n (NN)$ telle que tout $k in [|1, n|]$ apparaît exactement $n
 
 === De la géométrie
 
-Soit $bold(a) in CC^10$. On dira que $bold(p) in CC^10$ _couvre_ $bold(a)$ si $ bold(a) subset union.big_(x in bold(p)) overline(cal(B))(x, 1) $
-
-#question(4)[
-  Montrer qu'il existe $bold(p) in CC^10$ couvrant $bold(a)$.
+Soit $bold(a) in CC^10$. On dira que $bold(p) in CC^10$
+#grid(columns: (1fr, 2fr, 3fr), [],
+[- _couvre_ $bold(a)$ si $ bold(a) subset union.big_(x in bold(p)) overline(cal(B))(x, 1) $],
+[- est _sans superposition_ si $ forall x,y in bold(p), x != y => overline(cal(B))(x, 1) sect overline(cal(B))(y, 1) = emptyset $]
+)
+#question(3)[
+  Montrer qu'il existe $bold(p) in CC^10$ couvrant $bold(a)$ sans superposition.
 ]
 
 _Ind_: $(pi sqrt(3))/6 approx 0.907$
