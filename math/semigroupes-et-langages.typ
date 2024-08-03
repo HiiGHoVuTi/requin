@@ -20,8 +20,7 @@ Si $EE$ est un monoïde, soit $~ in (EE^2)^2$ telle que $(a,b) ~ (c,d) arrow.dou
 
 #question(1)[Que dire de $EE^2 \/ ~$ ?]
 
-Soit $Sigma$ un ensemble fini. On appelle $Sigma^star$ le plus petit monoïde contenant $Sigma$ et tel que
-$ forall u,v,w,x in Sigma^star, (u,v) = (w,x) <==> u v = w x  $
+Soit $Sigma$ un ensemble fini. On appelle $Sigma^star$ le plus petit monoïde contenant $Sigma$ et tel que tous les éléments de $Sigma^star$ admettent une unique composition comme somme d'éléments de $Sigma$.
 On note son neutre $epsilon$.
 
 #question(0)[
