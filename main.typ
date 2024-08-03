@@ -70,8 +70,8 @@
 ]
 
 = Algorithmique
-_c'est si vide ici..._
-
+== Fenêtre glissante
+#include "algo/window.typ"
 
 = Arbres & Graphes
 == Mots univers
