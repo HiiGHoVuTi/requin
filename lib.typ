@@ -7,13 +7,18 @@
 }
 
 #let levels_emojis = (
-  emoji.chicken.baby.head, emoji.cat, emoji.octopus, emoji.shark, emoji.bomb
-)
+  "emojis/chick.svg",
+  "emojis/cat.svg",
+  "emojis/octopus.svg",
+  "emojis/shark.svg",
+  "emojis/dragon.svg",
+  "emojis/biohazard.svg",
+).map(x => box(image(x)))
 
 
 #let question(score, question) = {
 
-  [ #score *Question #q_count.display()* #h(10pt) #question #h(1fr) /*#array.range(5).map(i => if i < score {$star.filled$} else {$star.stroked$}).sum()*/ \ ]
+  [ #levels_emojis.at(score) *Question #q_count.display()* #h(10pt) #question #h(1fr) /*#array.range(5).map(i => if i < score {$star.filled$} else {$star.stroked$}).sum()*/ \ ]
 
   q_count.step()
 }

@@ -12,7 +12,6 @@
 #import "@preview/codly:1.0.0": *
 #show: codly-init.with()
 
-
 // -------------------- PREMIERE PAGE --------------------
 #v(1fr)
 #align(center)[
@@ -23,6 +22,14 @@
 #v(1fr)
 
 #pagebreak()
+
+*Niveaux de difficultées*
+- #levels_emojis.at(0) : Question d'introduction. Prend entre quelques secondes et 1 minutes. Faisable de tete, il s'agit souvent de trouver un exemple ou un contre-exemple.
+- #levels_emojis.at(1) : Question demandant des méthodes classique, mais sans autre difficulté apparante. Très bien pour réviser le cours.
+- #levels_emojis.at(2) : Question relativement difficile, qui peut nécessiter un peu de travail et/ou des astuces relativement classique. Toutefois, avec un peu de persévérance, tout le monde y est capable. Très bien pour réviser des exercices. Il est fortement conseiller de les poser sur feuille.
+- #levels_emojis.at(3) : Question difficile du sujet, qui peut prendre entre une dizaine de minute pour les plus fort et plusieurs heures. Parfois, elles demandent de sortir des astuces peu communes. On ce doit de les poser sur feuille.
+- #levels_emojis.at(4) : Questions très très difficilles demandant beaucoup de recherche / connaissances externes. Demande plusieurs jours de travail.
+- #levels_emojis.at(5) : Questions ouvertes à la connaissance des autrices.
 
 // -------------------- SOMMAIRE --------------------
 #show outline.entry.where(
