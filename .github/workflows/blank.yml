@@ -1,0 +1,37 @@
+name: Build Typst document
+on: [push, workflow_dispatch]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Typst
+        uses: lvignoli/typst-action@main
+        with:
+          source_file: main.typ
+
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v3
+        with:
+          name: PDF
+          path: main.pdf
+
+      - name: Get current date
+        id: date
+        run: |
+          curl https://git.sr.ht/~tonic/repub-cal-tools/blob/master/bash%20scripts/rdate.sh > rdate
+          chmod -x rdate
+          echo "DATE=$(rdate)" >> $GITHUB_ENV
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: github.ref_type == 'tag'
+        with:
+          name: "${{ github.ref_name }} — ${{ env.DATE }}"
+          files: main.pdf
