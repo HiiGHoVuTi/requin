@@ -16,15 +16,18 @@ jobs:
         with:
           source_file: main.typ
 
+      - name: Rename output
+        run: cp main.pdf requin.pdf
+
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: main.pdf
+          path: requin.pdf
           
       - name: Release
         uses: softprops/action-gh-release@v1
         if: github.ref_type == 'tag'
         with:
           name: "${{ github.ref_name }}"
-          files: main.pdf
+          files: requin.pdf
