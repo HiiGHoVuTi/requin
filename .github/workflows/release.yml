@@ -26,8 +26,7 @@ jobs:
         id: date
         run: |
           curl https://git.sr.ht/~tonic/repub-cal-tools/blob/master/bash%20scripts/rdate.sh > rdate
-          chmod -x rdate
-          echo "DATE=$(./rdate)" >> $GITHUB_ENV
+          echo "DATE=$(sh ./rdate)" >> $GITHUB_ENV
       - name: Release
         uses: softprops/action-gh-release@v1
         if: github.ref_type == 'tag'
