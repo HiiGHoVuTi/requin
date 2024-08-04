@@ -91,6 +91,8 @@
 #include "log/compacite.typ"
 
 = Langages fonctionnels
+== Lambda calcul pour les nuls
+#include "fonc/lc-nuls.typ"
 
 = Mathématiques pour l'informatique
 == Monoïdes libres, langages et actions
