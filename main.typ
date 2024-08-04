@@ -83,6 +83,8 @@
 = Calculabilité
 == Calculabilité et représentation d'ensembles infinis
 #include "calc/ens_fct.typ"
+== Oméga de Chaitin
+#include "calc/chaitin.typ"
 
 = Logique
 == Compacité
