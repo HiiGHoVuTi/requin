@@ -43,11 +43,11 @@ Si $cal(Q)$ est un autre langage, on notera $cal(K_Q)(u)$ la quantité analogue.
 #question(0)[Montrer que $cal(K)$ est bien définie dans $NN union {+oo}$.]
 #question(1)[Donner une suite $u in NN^NN$ telle que $cal(K)(u)=+oo$.]
 #question(2)[Soient $cal(Q\,R)$ Turing-complets, montrer qu'il existe $k in NN$ tel que $cal(K_Q)<= k + cal(K_R)$.]
-#question(0)[Justifier l'existence de $phi : cal(P) -> NN$ bijective.]
+#question(0)[Justifier l'existence de $phi : NN->cal(P)$ bijective.]
 
 Par abus de notation, on notera $cal(K)(n) := cal(K)(chi_0 n)$ pour $n in NN$.
 
-On pose $psi(m) := min {n in NN, K(phi(n)) >= m}$ puis $frak(E) = K compose phi compose psi$.
+On pose $psi(m) := min {n in NN, K(phi(n)) >= m}$ puis $frak(E) = cal(K) compose phi compose psi$.
 
 #question(2)[Montrer que $frak(E)(m) >= m$ pour tout $m in NN$.]
 #question(2)[Montrer que $frak(E) = cal(O)(log(m)).$]
