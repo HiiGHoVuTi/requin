@@ -25,6 +25,7 @@ On le munit de la sémantique suivante, comme action sur $ZZ times NN^ZZ$:
 - $["prog"] dot (p, t) := cases((p\,t) "si" t[p] = 0, ["prog"]dot"prog"dot (p,t) "sinon")$
 ])
 
+#question(1)[Le langage $mono("BF")$ est-il rationnel ?]
 #question(0)[Implémenter la fonction $mono("NAND")$ en $mono("BF")$.]
 #question(0)[Implémenter la fonction $mono("ZERO")$ qui assigne la case pointée à $0$ en $mono("BF")$.]
 #question(0)[Implémenter la fonction $mono("MOVE")$ qui déplace une valeur à une adresse donnée en $mono("BF")$.]
