@@ -1,9 +1,12 @@
 #import "../lib.typ": *
 #show heading: heading_fct
 
+#import "@preview/gloss-awe:0.0.5": gls
+#show figure.where(kind: "jkrb_glossary"): it => {it.body}
+
 === Théorème (Lawvere)
 
-Soit $cal(C)$ une catégorie cartésienne fermée, si il existe $phi : A -> B^A$ surjective au point, alors tout endomorphisme $g : B -> B$ admet un point fixe.
+Soit $cal(C)$ une #gls(entry: "Catégorie", "catégorie") cartésienne fermée, si il existe $phi : A -> B^A$ surjective au point, alors tout endomorphisme $g : B -> B$ admet un point fixe.
 
 === Une preuve dans #emph("Set")
 

@@ -32,7 +32,7 @@ _Par exemple_, les arbres suivants sont croissants
   tree($1$, $3$, tree($2$, $3$, $$))
 ))
 
-#question(2)[Montrer qu'il existe exactement $n!$ arbres à $n$ noeuds.]
+#question(2)[Montrer qu'il existe exactement $n!$ arbres croissants à $n$ noeuds.]
 
 === Fusion
 

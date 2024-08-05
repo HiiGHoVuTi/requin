@@ -33,7 +33,7 @@ On note ensuite $H := G[S^dagger]$ et $overline(H) := overline(G)[S^dagger]$.
 ]
 
 #question(2)[
-  Démontrer $ "cr"(G) >= 1/64 m^3/n^2 $
+  Démontrer $"cr"(G) >= 1/64 m^3/n^2$.
 ]
 
 === Une question d'originalité
