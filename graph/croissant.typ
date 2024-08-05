@@ -10,7 +10,7 @@ _Ce sujet est adapté de l'épreuve d'informatique A 2014._
 Soit $cal(A)$ la plus petite classe contenant
 #align(center, grid(
   columns: (1fr, 2fr),
-  [- $"E "$], [- $"N "(g, x, d)$ pour $x in ZZ$ et $g,d in cal(A).$]
+  [- $"E "$], [- $"N "(g, x, d)$ pour $x in ZZ$ et $g,d in cal(A)$]
 ))
 
 On définit la taille et la hauteur de ces arbres
@@ -81,7 +81,10 @@ On appelle _coût de fusion_ de deux arbres $t_1$ et $t_2$ le nombre d'appels r�
 
 #question(1)[Exhiber un cas $x_1...x_n$ où une des `fusion`s a un coût supérieur ou égal à $n / 2$.]
 
-Soit $t_0$ un arbre de taille $2n+1$. On pose récursivement $t_(k+1) = mono("fusion")(g_k, d_k)$ avec $t_k =: "N "(g_k, x, d_k)$. On note que $t_n = "E "$.
+\
+Soit $t_0$ un arbre de taille $2n+1$. 
+
+On pose récursivement $t_(k+1) = mono("fusion")(g_k, d_k)$ avec $t_k =: "N "(g_k, x, d_k)$. On note que $t_n = "E "$.
 
 #question(1)[Montrer que cette construction est réalisable en temps $cal(O)(n log n)$.]
 

@@ -101,4 +101,6 @@
 #include "math/semigroupes-et-langages.typ"
 == Méthode probabiliste
 #include "math/methode-probabiliste.typ"
+== Théorème du point fixe de Lawvere
+#include "math/lawvere.typ"
 
