@@ -45,14 +45,14 @@ Si $cal(Q)$ est un autre langage, on notera $cal(K_Q)(u)$ la quantité analogue.
 #question(0)[Montrer que $cal(K)$ est bien définie dans $NN union {+oo}$.]
 #question(1)[Donner une suite $u in NN^NN$ telle que $cal(K)(u)=+oo$.]
 #question(2)[Soient $cal(Q\,R)$ Turing-complets, montrer qu'il existe $k in NN$ tel que $cal(K_Q)<= k + cal(K_R)$.]
-#question(0)[Justifier l'existence de $phi : NN->cal(P)$ bijective.]
+#question(0)[Justifier l'existence de $phi : NN -> cal(P)$ bijective.]
 
 Par abus de notation, on notera $cal(K)(n) := cal(K)(chi_{0} n)$ pour $n in NN$.
 
 On pose $psi(m) := min {n in NN, K(phi(n)) >= m}$ puis $frak(E) = cal(K) compose phi compose psi$.
 
 #question(2)[Montrer que $frak(E)(m) >= m$ pour tout $m in NN$.]
-#question(2)[Montrer que $frak(E)(m) = cal(O)(log(m)).$]
+#question(2)[Montrer que si $cal(K(K)) < +oo$, alors $frak(E)(m) = cal(O)(log(m)).$]
 #question(1)[Calculer $cal(K)(cal(K)).$]
 
 On a défini la _complexité de Kolmogorov_ qui décrit la quantité d'information contenue dans une suite, et est (à une constante additive près) invariante du modèle de calcul.
@@ -60,11 +60,13 @@ On a défini la _complexité de Kolmogorov_ qui décrit la quantité d'informati
 #pagebreak()
 === Programme aléatoire
 
-On suppose disposer d'une suite $(X_i)_(i in NN)$ de variables aléatoires suivant la loi $cal(B)(1/2)$.
+On suppose avoir muni $Sigma^NN$ d'une structure d'espace probabilisé, et qu'il existe $U$ une variable aléatoire telle que
+#align(center, grid(columns: (1fr),
+[$forall u in Sigma^star, med PP(u "préfixe de" U) = 2^(-|u|)$]
+))
 
-On note $U$ la suite aléatoire telle que $U_n = X_n$, et pour une suite $u in NN^NN$, $u^n in NN^n$ son préfixe à $n$ caractères.
-
-#question(1)[Montrer que $U$ possède presque sûrement un préfixe dans $cal(P)$.]
+#question(0)[Les événements ${u "préfixe de" U}$ sont-ils indépendants ?]
+#question(1)[Proposer une surjection de l'image de $U$ dans $cal(P)$.]
 
 On dit qu'une suite $u in NN^NN$ est _aléatoire au sens de Chaitin-Levin_ si la suite $(cal(K)(u^n) - n)$ est minorée.
 
@@ -93,8 +95,7 @@ On s'est muni d'une suite $U$ aléatoire, nous donnant un programme auto-délimi
 On définit $Omega in RR$ comme $Omega := PP(P "termine")$, on l'identifiera à son développement binaire $Omega in Sigma^NN$.
 
 #question(0)[Donner un programme dont le calcul approche $Omega$, quel est son problème ?]
-#question(2)[Déterminer une partition $L in frak(P)(cal(P))^NN$ de $cal(P)$ telle que $PP(P in L_n) = 2^(-n)$.]
-#question(1)[Exprimer $Omega^n$ en fonction des $PP(P in L_n)$ et de $PP(P "termine")$.]
+#question(2)[Exprimer $Omega$ en fonction des $PP(P in Sigma^n)$ et de $PP(P "termine")$.]
 #question(1)[Encadrer $Omega^n$ aussi finement que possible.]
 #question(2)[Résoudre le problème de l'arrêt pour des programmes à taille bornée.]
 #question(1)[Calculer $cal(K)(Omega)$.]
@@ -105,5 +106,5 @@ On suppose connaître $Omega^n$ pour tout $n in NN$.
 #question(2)[Peut-on répondre à l'hypothèse de Riemann par l'affirmatif ? par le négatif ?]
 
 #question(3)[Montrer que $Omega$ est aléatoire au sens de Chaitin-Levin.]
-#question(2)[En déduire la taille programme qui calcule $Omega^n$ est en $Omega(n)$.]
+#question(2)[En déduire que la taille d'un programme qui calcule $Omega^n$ est en $Omega(n)$.]
 
