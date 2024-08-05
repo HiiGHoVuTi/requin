@@ -60,7 +60,7 @@ On a défini la _complexité de Kolmogorov_ qui décrit la quantité d'informati
 #pagebreak()
 === Programme aléatoire
 
-On suppose avoir muni $Sigma^NN$ d'une structure d'espace probabilisé, et qu'il existe $U$ une variable aléatoire telle que
+On admet pouvoir munir $Sigma^NN$ d'une structure d'espace probabilisé, telle qu'il existe $U$ une variable aléatoire telle que
 #align(center, grid(columns: (1fr),
 [$forall u in Sigma^star, med PP(u "préfixe de" U) = 2^(-|u|)$]
 ))

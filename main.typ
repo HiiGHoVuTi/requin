@@ -64,6 +64,8 @@
 #include "graph/tùran.typ"
 == Coloration d'aretes
 #include "graph/col_arr.typ"
+== Arbres croissants
+#include "graph/croissant.typ"
 
 = Langages formels
 == Language permuté et inclusions
