@@ -51,7 +51,6 @@
 // setup heading to the custom one
 #show heading: heading_fct
 
-
 = Algorithmique
 == KMP
 #include "algo/kmp.typ"
@@ -106,6 +105,8 @@
 = Mathématiques pour l'informatique
 == Monoïdes libres, langages et actions
 #include "math/semigroupes-et-langages.typ"
+== Monoïdes et relations de Green
+#include "math/green.typ"
 == Méthode probabiliste
 #include "math/methode-probabiliste.typ"
 == Théorème du point fixe de Lawvere
