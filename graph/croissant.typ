@@ -44,7 +44,7 @@ let rec fusion t1 t2 = match t1, t2 with
   | N (g1, x1, d1), N (g2, x2, d2) ->
     if x1 <= x2
       then N (fusion d1 t2, x1, g1)
-      else N (fusion d2 t1, x2, d2)
+      else N (fusion d2 t1, x2, g2)
 ```
 
 #question(0)[Donner la fusion des arbres suivants
@@ -60,7 +60,7 @@ let rec fusion t1 t2 = match t1, t2 with
 
 On définit $alpha_n (x_1...x_n) := mono("ajoute") x_n (mono("ajoute") x_(n-1) ... (mono("ajoute") x_1 "E ")...)$ 
 
-#question(2)[Étudier les maxima de $h compose alpha_n$.]
+#question(2)[Trouver $x_1...x_n in NN$ tels que $h(alpha_n (x_1...x_n)) >= n/2$.]
 
 #question(3)[Calculer $h(alpha_n (1...n))$. _Justifier soigneusement la réponse_.]
 

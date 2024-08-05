@@ -66,6 +66,8 @@
 #include "graph/col_arr.typ"
 == Arbres croissants
 #include "graph/croissant.typ"
+== Lemme de König
+#include "graph/konig.typ"
 
 = Langages formels
 == Language permuté et inclusions
