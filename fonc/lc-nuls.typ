@@ -1,9 +1,12 @@
 #import "../lib.typ": *
 #show heading: heading_fct
 
+#import "@preview/gloss-awe:0.0.5": gls
+#show figure.where(kind: "jkrb_glossary"): it => {it.body}
+
 #import "@preview/curryst:0.3.0": rule, proof-tree
 
-Soit $cal(V)$ un ensemble de variables puis $Lambda$ la plus petite classe contenant:
+Soit $cal(V)$ un ensemble de variables puis $Lambda$ la plus petite #gls(entry: "Classe")[classe] contenant:
 #align(center, grid(columns: (1fr, 1fr, 1fr), 
 [- $x$ pour $x in cal(V)$],
 [- $lambda x. u$ pour $u in Lambda$],

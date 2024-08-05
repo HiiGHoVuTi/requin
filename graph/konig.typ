@@ -27,7 +27,7 @@ On considère un jeu nommé \"Arbres et boules\"
 - À chaque tour, on pioche une boule dans le sac puis:
   - On note son label $k in NN$.
   - On place autant de boules labellées avec des entiers de $[|0, k-1|]$ que l'on souhaite dans le sac.
-- Le jeu s'arrête si on pioche une boule labellée $0$
+- Le jeu s'arrête si on pioche une boule labellée $0$.
 
 #question(1)[Montrer qu'une partie d'arbres et boules est finie.]
 
@@ -95,6 +95,6 @@ Si $kappa$ est un cardinal, un _$kappa$-arbre d'Aronszajn_ est un arbre de cardi
 
 // TODO(Juliette): ajouter qq indications... c'est impossible là c'est un sujet de thèse
 
-#question(4)[Démontrer qu'il existe un $alef_1$-arbre d'Aronszajn. (_question en attente d'indications_)]
+#question(5)[Démontrer qu'il existe un $alef_1$-arbre d'Aronszajn.]
 
 _L'existence d'un $alef_2$-arbre d'Aronszajn est indécidable dans ZFC._

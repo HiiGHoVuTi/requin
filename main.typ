@@ -111,3 +111,14 @@
 == Théorème du point fixe de Lawvere
 #include "math/lawvere.typ"
 
+
+= Glossaire
+
+#import "@preview/gloss-awe:0.0.5": *
+#import "./glossary-pool.typ": glossary-pool
+
+#pagebreak()
+#set text(font: ("Arial", "Trebuchet MS"), size: 8pt)
+#columns(2)[
+    #make-glossary(glossary-pool)
+]
