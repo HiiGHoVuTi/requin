@@ -50,12 +50,12 @@ On suppose que $|cal(p)(ZZ^2)| < +oo$.
 
 #question(2)[ Montrer que si on peut paver $[|1, n|]^2$ pour tout $n$, alors on peut paver $ZZ^2$. ]
 
-#question(1)[ Montrer que ce résultat n'est pas forcément si $|cal(p)(ZZ^2)| = +oo$. ]
+#question(1)[ Montrer que ce résultat n'est pas forcément vrai si $|cal(p)(ZZ^2)| = +oo$. ]
 
-#question(1)[ Montrer que si un pavage est minimal, alors il existe $n in NN$ tel que toute tuile apparaisse dans tout carré de dimension $n times n$. ]
+#question(1)[ Montrer que si $|cal(p)(ZZ^2)|$ est minimale, alors il existe $n in NN$ tel que toute tuile apparaisse dans tout carré de dimension $n times n$. ]
 
 // Un pavage $cal(p)$ est _périodique_ si $ exists (x,y) in NN^2, forall (i,j) in ZZ^2, cal(p)(i,j)=cal(p)(i+x,j)=cal(p)(i, j+y)=cal(p)(i+x,j+y) $
-Un pavage $cal(p)$ est _presque périodique_ si tout motif carré s'y répète infiniment.
+Un pavage $cal(p)$ est _presque périodique_ si tout motif carré s'y répète infiniment souvent.
 
 On considère un jeu de tuiles fini $S$ pavant $ZZ^2$. Une tuile est donc un élément de $S^4$.
 Soit $cal(p)_0$ un pavage de $ZZ^2$ et $M_n$ les ensembles de motifs de taille $n times n$ infiniment présents dans $cal(p)_0$.
@@ -75,7 +75,7 @@ L'axiome du choix *AC*($kappa$) est la proposition suivante: Si $E$ est un ensem
 
 #question(1)[Justifier que la preuve du lemme de König utilise $bold("AC")(|NN|)$.]
 
-Ainsi *König* $==>$ *AC($|NN|$)*. Démontrons le sens réciproque.
+Ainsi *AC($|NN|$)* $==>$ *König*. Démontrons le sens réciproque.
 
 Soit $E = {X_n}$ un ensemble dénombrable d'ensembles non-vides. On pose $ S = union.big_(n=0)^(+oo)product_(k=0)^n X_k $
 
