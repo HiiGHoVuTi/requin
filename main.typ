@@ -76,6 +76,8 @@
 = Langages formels
 == Language permuté et inclusions
 #include "lang/inclusions.typ"
+== Automates d'arbres
+#include "lang/auto_arbre.typ"
 == Language continuables
 #include "lang/continuables.typ"
 == Puissance et racine de languages
