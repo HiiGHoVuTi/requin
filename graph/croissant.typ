@@ -1,13 +1,16 @@
 #import "../lib.typ": *
 #show heading: heading_fct
 
+#import "@preview/gloss-awe:0.0.5": gls
+#show figure.where(kind: "jkrb_glossary"): it => {it.body}
+
 #import "@preview/syntree:0.2.0": tree
 
 _Ce sujet est adapté de l'épreuve d'informatique A 2014._
 
 === Introduction
 
-Soit $cal(A)$ la plus petite classe contenant
+Soit $cal(A)$ la plus petite #gls(entry: "Classe")[classe] contenant
 #align(center, grid(
   columns: (1fr, 2fr),
   [- $"E "$], [- $"N "(g, x, d)$ pour $x in ZZ$ et $g,d in cal(A)$]
