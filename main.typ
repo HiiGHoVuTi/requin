@@ -51,19 +51,24 @@
 // setup heading to the custom one
 #show heading: heading_fct
 
+
 = Algorithmique
+== KMP
+#include "algo/kmp.typ"
 == Fenêtre glissante
 #include "algo/window.typ"
+== Approximation de la $k$-coloriabilité d'un graphe
+#include "algo/colors_aprox.typ"
 
 = Arbres & Graphes
 == Mots univers
 #include "graph/univers.typ"
 == Bipartition induite
 #include "graph/bipartition.typ"
-== Théorème de Tùran
-#include "graph/tùran.typ"
 == Coloration d'aretes
 #include "graph/col_arr.typ"
+== Théorème de Tùran
+#include "graph/tùran.typ"
 == Arbres croissants
 #include "graph/croissant.typ"
 == Lemme de König
