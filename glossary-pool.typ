@@ -22,6 +22,12 @@ Le concept de _classe_ généralise celui d'ensemble. Une classe peut-être déf
 Ce qui différenciera en pratique une classe d'un ensemble dans le _REQUIN_, c'est qu'une classe ne peut se trouver qu'à droite du symbole $in$.
     ]
   ),
+  "Classe combinatoire": (
+    description: [  
+Une [_classe combinatoire_] est un ensemble $cal(C)$ muni d'une fonction $"taille" = |dot| : cal(C) --> NN$ telle que pour tout $n in NN$, $"taille"^(-1)(n)$ est un ensemble fini.
+On la munit d'une suite $c_n := |"taille"^(-1)(n)|$ (lettre minuscule) et de la série formelle $C_n in CC((X))$ (lettre majuscule droite).
+    ]
+  ),
   Demi-groupe: (
     description: [
 Un _demi-groupe_ $(S, +)$ est un magma associatif, c'est-à-dire que

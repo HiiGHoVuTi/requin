@@ -117,6 +117,8 @@
 #include "math/methode-probabiliste.typ"
 == Théorème du point fixe de Lawvere
 #include "math/lawvere.typ"
+== Séries génératrices et formelles
+#include "math/series.typ"
 
 
 = Glossaire
