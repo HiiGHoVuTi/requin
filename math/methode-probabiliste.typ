@@ -61,9 +61,9 @@ _Ind_: $(pi sqrt(3))/6 approx 0.907$
 
 Soit $k in NN$.
 
-La propriété à laquelle on s'intéresse ici est la _propriété de distance_ $ cal(D)(a_1...a_k) := (forall i,j, |a_i - a_j| <= 2) or (forall i,j, |a_i - a_j| >= 1) $
+La propriété à laquelle on s'intéresse ici est la _propriété de distance_ $ cal(D)(a_1...a_k) := (forall i,j, |a_i - a_j| <= 2) or (forall i!=j, |a_i - a_j| >= 1) $
 
-On pose enfin $cal(P)(n) := forall A in frak(P)(CC), med |A| ==> (exists { a_1...a_k } subset A, med cal(D)(a_1...a_k))$
+On pose enfin $cal(P)(n) := forall A in frak(P)(CC), med (|A|=n) ==> (exists { a_1...a_k } subset A, med cal(D)(a_1...a_k))$
 
 #question(4)[
   Calculer $inf {n in NN, cal(P)(n) }$.

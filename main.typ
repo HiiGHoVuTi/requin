@@ -37,7 +37,7 @@
 - #levels_emojis.at(2) : Question nécessitant un raisonnement plus complet ou une astuce, mais à la portée de tous
 - #levels_emojis.at(3) : Question difficile du sujet demandant une réflexion posée ou une bonne intuition
 - #levels_emojis.at(4) : Question très difficile pour les plus courageux qui n'ont pas peur de réfléchir longtemps
-- #levels_emojis.at(5) : Question ouverte à la connaissance des autrices
+- #levels_emojis.at(5) : Question ouverte à la connaissance des autrices, ou de difficulté déraisonnable
 
 // -------------------- SOMMAIRE --------------------
 #show outline.entry.where(
@@ -97,6 +97,8 @@
 = Langages fonctionnels
 == Lambda calcul pour les nuls
 #include "fonc/lc-nuls.typ"
+== Composition monadique
+#include "fonc/comp-monade.typ"
 
 = Mathématiques pour l'informatique
 == Monoïdes libres, langages et actions

@@ -1,11 +1,15 @@
 #import "../lib.typ": *
 #show heading: heading_fct
 
+#import "@preview/gloss-awe:0.0.5": gls
+#show figure.where(kind: "jkrb_glossary"): it => {it.body}
 
-Soit un _demi-groupe_ $(S, +)$, c'est-à-dire que
+Soit un #gls(entry: "Demi-groupe")[_demi-groupe_] $(S, +)$, c'est-à-dire que
 #align(center, grid(columns: (1fr, 1fr), 
 [- $S$ est stable par $+$],
 [- La loi $+$ est associative]))
+
+_On considère que tous les éléments de $S$ occupent une taille constante en mémoire_.
 
 Soit $L in S^[|1, n|]$ une liste d'éléments de $S$, et $w <= n$.
 

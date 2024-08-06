@@ -9,15 +9,15 @@ _Tout arbre infini de degré borné admet un chemin simple infini commençant à
 
 === Coloration d'un graphe
 
-Soit $k in NN$ puis $G=(NN,A)$ un graphe tel que pour $S subset NN$, $G[S]$ est $k$-coloriable.
+Soit $k in NN$ puis $G=(NN,A)$ un graphe tel que pour $S subset NN$ fini, $G[S]$ est $k$-coloriable.
 
 On note $cal(C)(S)$ l'ensemble des $k$-colorations possibles de $G[S]$.
 
-#question(0)[ Donner une suite $(S_n)$ croissante telle que $S_n -> NN$. ]
+#question(0)[ Donner une suite $(S_n)$ croissante de parties finies telle que $S_n -> NN$. ]
 
 On dira qu'une coloration de $S$ est _compatible_ avec une coloration de $S' supset S$ si toutes les couleurs assignées aux éléments de $S$ sont identiques.
 
-#question(0)[ Montrer que $|cal(C)(S_n)|$ est décroissante et minorée. ]
+#question(0)[ Montrer que $|C(S_n)|$ est minorée et que pour $c in C(S_n)$, l'ensemble des colorations compatibles avec $c$ est fini. ]
 #question(2)[ En déduire que $G$ est $k$-coloriable. ]
 
 === Arbres et boules

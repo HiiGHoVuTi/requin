@@ -74,7 +74,8 @@ On pose $Phi$ la fonction qui à un arbre associe son nombre de noeuds lourds, q
 
 #question(1)[Implémenter `potentiel : arbre -> int`.]
 
-On appelle _coût de fusion_ de deux arbres $t_1$ et $t_2$ le nombre d'appels récursifs effectués pendant le calcul de `fusion(t1, t2)`.
+On appelle _coût de fusion_ de deux arbres $t_1$ et $t_2$ le nombre d'appels récursifs effectués pendant le calcul de `fusion(t1, t2)`. 
+On note ce coût $C(t_1, t_2)$.
 
 #question(2)[Soient $t_1,t_2$ des arbres croissants et $t := mono("fusion") t_1 med t_2$.
   Montrer que $ C(t_1, t_2) <= Phi(t_1) + Phi(t_2) - Phi(t) + 2 (log(|t_1|)+log(|t_2|)) $
