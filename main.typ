@@ -89,6 +89,8 @@
 #include "jeux/nim_set.typ"
 == ChipLiar Game
 #include "jeux/chip-liar.typ"
+== ChipFiring Game
+#include "jeux/chip-firing.typ"
 
 = Calculabilité
 == Calculabilité et représentation d'ensembles infinis

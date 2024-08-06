@@ -4,7 +4,7 @@
 #import "@preview/gloss-awe:0.0.5": gls
 #show figure.where(kind: "jkrb_glossary"): it => {it.body}
 
-_Dans ce problème, on utilisera du pseudocode fonctionnel ou le langage `OCaml`. Les parties III et IV sont indépendantes_
+_Dans ce problème, on utilisera du pseudocode fonctionnel ou le langage `OCaml`._
 
 On suivra la convention `OCaml`, et identifiera les types génériques (`'a`) à la lettre grecque correspondante ($alpha$).
 On notera `.` l'opérateur de composition $compose$ et `id` la fonction identité.
