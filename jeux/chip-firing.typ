@@ -73,6 +73,6 @@ On considère $j := s arrow.bar deg_" sortant" (s)$.
 
 Pour $u,v in S$ on définit $d(u,v)$ comme la taille d'un plus court chemin entre $u$ et $v$, puis $ "diam"(G) := max{d(u,v), u,v in S} $
 
-#question(2)[Montrer que dans une partie à $N$ jetons, si $u$ et $v$ sont voisins, alors $u$ ne peut pas être joué plus de $N$ fois plus de fois que $v$.]
+#question(2)[Montrer que dans une partie à $N$ jetons, si $u$ et $v$ sont voisins, alors $u$ ne peut pas être joué plus de $N$ fois plus de fois que $v$ à un instant donné.]
 
-#question(3)[En déduire qu'une partie finie se termine en moins de $2 times |S| times |A| times d$ coups.]
+#question(3)[En déduire qu'une partie finie se termine en moins de $2 times |S| times |A| times "diam"(G)$ coups.]
