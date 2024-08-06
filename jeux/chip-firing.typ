@@ -30,7 +30,7 @@ On a alors le diagramme commutant suivant
   arr($v dot j$, $s dot v dot j$, $s$),
 ))
 
-Pour $bold(s) := (s_1...s_n) in S^n$, on note $bold(s) dot j := s_1 dot ... dot s_n dot j$ si cette quantité est bien définie.
+Pour $bold(s) := (s_1...s_n) in S^n$, on note $bold(s) dot j := s_n dot ... dot s_1 dot j$ si cette quantité est bien définie.
 
 #question(1)[Montrer que si $bold(s)$ est une permutation de $bold(v)$, alors $bold(s) dot j = bold(v) dot j$.]
 
@@ -54,7 +54,7 @@ Si il existe $n in NN$ et $bold(s) in S^n$ tels que $bold(s) dot j_0$ existe et 
 *Théorème* (_CFG sur un graphe fini_):
 Si $N in NN$ jetons sont en jeu,
 - Si $N > 2|A| - |S|$ alors toute configuration initiale admet une partie infinie
-- Si $N < m$ alors toute partie admet une partie finie
+- Si $N < |A|$ alors toute partie admet une partie finie
 - Sinon, il existe une configuration admettant une partie infinie et une autre admettant une partie finie
 
 #question(1)[Démontrer les deux premiers cas du théorème.]
