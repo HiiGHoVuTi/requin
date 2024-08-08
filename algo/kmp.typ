@@ -9,7 +9,7 @@ On pose $"LPS"[i]$ (pour *Longest Prefix also Suffix*) la longueur du plus long 
 
 #question(0)[Indiquer le tableau LPS de $w = "aabaacaaabaaa"$]
 
-#question(2)[
+#question(1)[
  - Si $"LPS"[i] = k$, et que $w[i+1] = w_k$, que vaux $"LPS"[i+1]$ ?
  - Sinon si $"LPS"["LPS"[i]] = k$, et que $w[i+1] = w_k$, que vaux $"LPS"[i+1]$ ?]
 

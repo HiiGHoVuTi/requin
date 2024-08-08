@@ -6,7 +6,7 @@ On dit qu'un tableau $T$ d'entiers de longueur $n$ est _auto-référent_ si pour
 Par exemple, $[1,2,1,0]$ est un tableau autoréférent de longueur 4.
 
 #question(0)[Donner le deuxième tableau autoréférent de longueur 4]
-#question(2)[Donner un code $"C"$ qui vérifie si un tableau de longueur $n$ est autoréférent en $O(n)$]
+#question(1)[Donner un code $"C"$ qui vérifie si un tableau de longueur $n$ est autoréférent en $O(n)$]
 #question(2)[Donner un code $"C"$ de recherche exaustive qui renvoie le nombre de tableaux référent de longueur $k$]
 
 #question(2)[Montrer que pour $n>6$, il existe un tableau auto-référent de longueur $n$] 

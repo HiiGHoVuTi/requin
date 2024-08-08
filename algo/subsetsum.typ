@@ -2,7 +2,7 @@
 #show heading: heading_fct
 
 On considère le problème suivant :
-#problem([SUBSETSUM],$a_1, a_2, ..., a_n, S in NN$,[
+#problem([SUBSETSUM],[$n in NN$ et $a_1, a_2, ..., a_n, S in NN$],[
   Est-ce qu'il existe $I subset.eq [n]$ tel que\
   $ sum_(i in I) a_i = S $
 ])
@@ -35,12 +35,27 @@ On considère le problème suivant :
 
 On cherche à prouver que le problème précédent est NP-Complet. Pour cela on considère une généralisation du problème sur des $k$-uplets : 
 
-#problem([SUBSETSUM-VECT],$a_1, a_2, ..., a_n, S in NN^k$,[
+#problem([SUBSETSUM-VECT],[$k,n in NN$ et $a_1, a_2, ..., a_n, S in NN^k$],[
   Est-ce qu'il existe $I subset.eq [n]$ tel que\
   $ sum_(i in I) a_i = S $
 ])
 
-// TODO(Coda): Finir la réduction
+#question(1)[
+  Montrer que le problème *SUBSETSUM-VECT* est NP-Complet
+]
+
+#question(2)[
+  Montrer que on peut réduire le problème *SUBSETSUM-VECT* au problème *SUBSETSUM*
+]
+
+#question(2)[
+  Montrer que *SUBSETSUM-VECT* est NP-Complet. On pourra poser $k$ le nombre de clauses d'une formule $phi$ sous forme normale conjonctive
+]
+
+#question(1)[
+  Vu que on a en question 2 un algorithme en $O(n S)$, est-ce que l'on peut en conclure que $"P" = "NP"$ ?
+]
+
 === Un problème analogue
 
 On introduit le problème suivant :

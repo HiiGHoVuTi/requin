@@ -40,7 +40,6 @@
 - #levels_emojis.at(5) : Question ouverte à la connaissance des autrices, ou de difficulté déraisonnable
 
 
-
 // -------------------- SOMMAIRE --------------------
 #show outline.entry.where(
   level: 1
@@ -63,8 +62,8 @@
 #include "algo/subsetsum.typ"
 == Fenêtre glissante
 #include "algo/window.typ"
-== Approximation de la $k$-coloriabilité d'un graphe
-#include "algo/colors_aprox.typ"
+== Approximation dans les graphes
+#include "algo/aprox.typ"
 
 = Arbres & Graphes
 == Mots univers
