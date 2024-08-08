@@ -66,8 +66,8 @@
 #include "graph/bipartition.typ"
 == Coloration d'aretes
 #include "graph/col_arr.typ"
-== Théorème de Tùran
-#include "graph/tùran.typ"
+== Théorème de Turán
+#include "graph/turan.typ"
 == Arbres croissants
 #include "graph/croissant.typ"
 == Lemme de König
@@ -113,7 +113,7 @@
 #include "math/semigroupes-et-langages.typ"
 == Monoïdes et relations de Green
 #include "math/green.typ"
-== Méthode probabiliste
+== Méthode probabiliste <meth-proba>
 #include "math/methode-probabiliste.typ"
 == Théorème du point fixe de Lawvere
 #include "math/lawvere.typ"

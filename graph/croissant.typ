@@ -8,6 +8,10 @@
 
 _Ce sujet est adapté de l'épreuve d'informatique A 2014._
 
+#correct[
+  Dans ce sujet, il faut faire _très attention_ à la rigueur dans les récurrences. On ne peut pas faire une récurrence sur tout et n'importe quoi, et on ne fait pas dire à l'hypothèse de récurrence ce qu'on veut.
+]
+
 === Introduction
 
 Soit $cal(A)$ la plus petite #gls(entry: "Classe")[classe] contenant
@@ -24,8 +28,25 @@ On définit la taille et la hauteur de ces arbres
 ))
 
 #question(0)[Proposer un type `OCaml` décrivant $cal(A)$.]
+
+#correct[
+  ```ocaml
+  type arbre = E | N of arbre * int * arbre
+  ```
+]
+
 #question(1)[Implémenter les fonctions `taille` et `hauteur`.]
-#question(0)[Implémenter une fonction `minimum : arbre -> int option`.]
+
+#correct[
+```ocaml
+let rec taille = function
+  | E -> 1
+  | N (g, _, d) -> 1 + taille g + taille d
+let rec hauteur = function
+  | E -> 0
+  | N (g, _, d) -> max (hauteur g) (hauteur d)
+```
+]
 
 Un arbre de $cal(A)$ est un arbre croissant si et seulement si sa racine est son minimum et que ses deux fils sont croissants.
 _Par exemple_, les arbres suivants sont croissants
@@ -35,7 +56,32 @@ _Par exemple_, les arbres suivants sont croissants
   tree($1$, $3$, tree($2$, $3$, $$))
 ))
 
-#question(2)[Montrer qu'il existe exactement $n!$ arbres croissants à $n$ noeuds.]
+#question(0)[Implémenter une fonction `minimum : arbre -> int option`.]
+
+#correct[
+```ocaml
+let minimum = function
+  | E -> None
+  | N (_, x, _) -> x
+```
+]
+
+#question(2)[Montrer qu'il existe exactement $n!$ arbres croissants à $n$ noeuds (à étiquettes distinctes).]
+
+#correct[
+  On raisonne par récurrence forte sur $n in NN$.
+  
+  _Initialisation_: Si $n = 0$ ou $n = 1$, c'est évident.
+
+  _Hérédité_: On suppose que si $k <= n$, alors il existe $k!$ arbres croissants à $k$ noeuds.
+  Pour construire un arbre croissant à $n+1$ noeuds, on peut
+  - Choisir $k in [|0, n|]$ la taille du fils gauche (_$n+1$ choix_)
+  - Choisir $g$ la partie des noeuds qui iront au fils gauche (_$binom(n+1, k)$ choix_)
+  - Construire le fils gauche à $g$ noeuds (_HR: $k!$ choix_)
+  - Construire le fils droit à $n-g$ noeuds (_HR: $(n-k)!$ choix_)
+  Au total, $(n+1)binom(n+1, k)k!(n-k)!$ choix ont été faits.
+  Il existe $(n+1)!$ arbres croissants à $n+1$ noeuds.
+]
 
 === Fusion
 
@@ -58,14 +104,59 @@ let rec fusion t1 t2 = match t1, t2 with
 ))
 ]
 
+#correct[
+  #align(center, tree(
+    $1$, tree($3$, tree($4$, $6$, $$), $5$), $2$
+  ))
+]
+
 #question(1)[Proposer une fonction `ajoute : int -> arbre -> arbre` conservant la propriété d'arbre croissant.]
+
+#correct[
+```ocaml
+let ajoute x = fusion (N (E, x, E))
+```
+
+  Il est sous-entendu ici qu'il faut rappeler que `fusion` conserve la propriété d'arbre croissant.
+  On peut le faire sans difficulté par récurrence _sur la somme des tailles des arbres_.
+]
+
 #question(1)[Proposer une fonction `supprime_minimum : arbre -> arbre` conservant la propriété d'arbre croissant.]
 
-On définit $alpha_n (x_1...x_n) := mono("ajoute") x_n (mono("ajoute") x_(n-1) ... (mono("ajoute") x_1 "E ")...)$ 
+#correct[
+```ocaml
+let supprime_minimum a = match a with
+  | E -> E
+  | N (g, _, d) -> fusion g d
+```
+]
+
+On définit $alpha_1 (x) = "N "("E ", x, "E ")$ puis $alpha_(n+1) (x_1...x_(n+1)) := mono("fusion")(alpha_n (x_1...x_n), alpha_1 (x_(n+1)))$ 
 
 #question(2)[Trouver $x_1...x_n in NN$ tels que $h(alpha_n (x_1...x_n)) >= n/2$.]
 
+#correct[
+  Une suite décroissante d'éléments $x_k := n-k$ répond à la question.
+  En effet, l'appel #grid(columns: (1fr, 1fr, 1fr), tree(`fusion`, $alpha_k (x_1...x_k)$, $x_(k+1)$), "renvoie l'arbre", tree($x_(k+1)$, $alpha_k (x_1 ... x_k)$, $$))
+  On obtient alors le graphe peigne, qui convient.
+]
+
 #question(3)[Calculer $h(alpha_n (1...n))$. _Justifier soigneusement la réponse_.]
+
+#correct[
+  Il faut ici faire une récurrence *rigoureuse* sur la taille de l'arbre.
+  On notera $alpha T + beta$ l'arbre $T$ ré-étiqueté par $x arrow.bar alpha x + beta$.
+  On pose $cal(H)(n)$ l'hypothèse suivante
+  #grid(columns: (8fr, 1fr, 10fr, 1fr, 8fr, 1fr, 10fr), 
+  tree($alpha_(2n+2)(1...2n+2)$), $=$, tree($1$, $2 alpha_n (1..n) + 1$, $2 alpha_(n+1)(1..n)$),
+  "et",
+  tree($alpha_(2n+1) (1...2n+1)$), $=$, tree($1$, $2 alpha_n (1...n) + 1$, $2 alpha_n (1...n)$),
+  )
+  _Initialisation_: Il suffit d'étudier les arbres à $1$ et $2$ éléments.
+
+  _Hérédité_: On suppose $cal(H)(k)$ vraie pour $k <= n$.
+  On applique l'algorithme à la main sur les objets proprement définis par $cal(H)$ et on montre les deux hypothèses.
+]
 
 === Analyse
 
@@ -74,6 +165,20 @@ On pose $Phi$ la fonction qui à un arbre associe son nombre de noeuds lourds, q
 
 #question(1)[Implémenter `potentiel : arbre -> int`.]
 
+#correct[
+```ocaml
+let potentiel a0 =
+  let rec aux arbre = match arbre with
+    | E -> (* potentiel *) 0, (* taille *) 1
+    | N (g, _, d) -> 
+      let pg, tg = aux g in
+      let pd, td = aux d in
+      (* potentiel *) pg + pd + (if td > tg then 1 else 0), 
+      (* taille    *) 1 + tg + td
+  in fst (aux a0)
+```
+]
+
 On appelle _coût de fusion_ de deux arbres $t_1$ et $t_2$ le nombre d'appels récursifs effectués pendant le calcul de `fusion(t1, t2)`. 
 On note ce coût $C(t_1, t_2)$.
 
@@ -81,9 +186,23 @@ On note ce coût $C(t_1, t_2)$.
   Montrer que $ C(t_1, t_2) <= Phi(t_1) + Phi(t_2) - Phi(t) + 2 (log(|t_1|)+log(|t_2|)) $
 ]
 
+#correct[
+  Il s'agit de faire une récurrence sur la somme de la taille des arbres.
+  // TODO(Juliette): améliorer cette correction.
+  Il n'y a pas d'astuce particulière, de la persévérance suffit.
+]
+
 #question(1)[Montrer que le coût de $alpha(x_1...x_n)$ est en $cal(O)(n log n).$]
 
+#correct[
+  Il s'agit simplement d'un télescopage, en remarquant que la différence de potentiel totale est en $cal(O)(|t|)$.
+]
+
 #question(1)[Exhiber un cas $x_1...x_n$ où une des `fusion`s a un coût supérieur ou égal à $n / 2$.]
+
+#correct[
+  On peut réutiliser la suite décroissante, en ajoutant en dernier un élément maximal. On montre que l'on a bien des basculements à chaque niveau.
+]
 
 \
 Soit $t_0$ un arbre de taille $2n+1$. 
@@ -92,7 +211,15 @@ On pose récursivement $t_(k+1) = mono("fusion")(g_k, d_k)$ avec $t_k =: "N "(g_
 
 #question(1)[Montrer que cette construction est réalisable en temps $cal(O)(n log n)$.]
 
+#correct[
+  Il s'agit comme à la question $11$ d'un télescopage, mais cette fois-ci plus subtil. Il suffit de mener à bien les calculs.
+]
+
 === Applications
+
+#correct[
+  Cette partie n'est pas encore corrigée car relou, vous pouvez chercher "tri par tas".
+]
 
 #question(1)[En utilisant la structure d'arbre croissant, définir `tri : int list -> int list`. _Une complexité temporelle en $cal(O)(n log n)$ est attendue et sera soigneusement justifiée_.]
 

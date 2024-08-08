@@ -24,7 +24,7 @@ Ce qui différenciera en pratique une classe d'un ensemble dans le _REQUIN_, c'e
   ),
   "Classe combinatoire": (
     description: [  
-Une [_classe combinatoire_] est un ensemble $cal(C)$ muni d'une fonction $"taille" = |dot| : cal(C) --> NN$ telle que pour tout $n in NN$, $"taille"^(-1)(n)$ est un ensemble fini.
+Une _classe combinatoire_ est un ensemble $cal(C)$ muni d'une fonction $"taille" = |dot| : cal(C) --> NN$ telle que pour tout $n in NN$, $"taille"^(-1)(n)$ est un ensemble fini.
 On la munit d'une suite $c_n := |"taille"^(-1)(n)|$ (lettre minuscule) et de la série formelle $C_n in CC((X))$ (lettre majuscule droite).
     ]
   ),
@@ -52,6 +52,23 @@ Un magma $(A, +)$ est un ensemble muni d'une loi de composition interne.
     description: [
 #show figure.where(kind: "jkrb_glossary"): it => {it.body}
 Un _monoïde_ est $(M, +)$ est un #gls(entry: "Magma")[magma] associatif unifère, c'est-à-dire un #gls(entry: "Demi-groupe")[demi-groupe] avec un élément neutre.
+    ]
+  ),
+  "Transformation naturelle": (
+    description: [
+#show figure.where(kind: "jkrb_glossary"): it => {it.body}
+Une _transformation naturelle_ $alpha$ entre un #gls(entry: "Foncteur")[foncteur] $F$ et un #gls(entry: "Foncteur")[foncteur] $G$ est une famille de fonctions telles que pour $x,y$ des types et $h : x -> y$, le diagramme suivant commute
+#import "@preview/fletcher:0.5.1" as fletcher: diagram, node, edge
+#align(center, diagram(
+  node((0, 0), $F(x)$),
+  node((0, 1), $G(x)$),
+  node((1, 0), $F(y)$),
+  node((1, 1), $G(y)$),
+  edge((0, 0), (0, 1), "->", $alpha_x$),
+  edge((1, 0), (1, 1), "->", $alpha_y$),
+  edge((0, 0), (1, 0), "->", $"fmap"F(h)$),
+  edge((0, 1), (1, 1), "->", $"fmap"G(h)$),
+))
     ]
   )
 )

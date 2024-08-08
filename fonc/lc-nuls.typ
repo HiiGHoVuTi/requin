@@ -6,6 +6,11 @@
 
 #import "@preview/curryst:0.3.0": rule, proof-tree
 
+#correct[
+  // TODO(Juliette): corriger cet exo
+  Cet exercice se fait sans trop de difficulté, une correction sera proposée ultérieurement.
+]
+
 Soit $cal(V)$ un ensemble de variables puis $Lambda$ la plus petite #gls(entry: "Classe")[classe] contenant:
 #align(center, grid(columns: (1fr, 1fr, 1fr), 
 [- $x$ pour $x in cal(V)$],
