@@ -78,4 +78,14 @@
 }
 
 
+#let problem(name,entry,output) = {
+  set align(center)
+  rect(outset: 3pt)[
+    *#name*\
+    #set align(left)
+    *ENTREE:* #entry \
+    *SORTIE:* #output
+  ]
+  set align(left)
+}
 

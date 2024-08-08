@@ -6,15 +6,10 @@ Les graphes $G=(V,E)$ sont ici tous non orientés, on a donc $E$ qui est un ense
 
 Pour tout $G=(V,E)$ un graphe, on note $Delta(G) = max{ deg s : s in V }$.
 
-Vous avez le choix de la structure de données utillisé pour stoquer le graphe pour les questions d'algorithmique. On rapelle le problème *Maximum Independant Set (MIS)* :
-#set align(center)
-#rect(outset: 3pt)[
-  #set align(left)
-  *Maximum Independant Set (MIS)*\
-  *Entrée:* Un graphe $G=(V,E)$ \
-  *Sortie:* $max_(I subset.eq V) {|I| : I^2sect E = emptyset}$
-]
-#set align(left)
+Vous avez le choix de la structure de données utillisé pour stoquer le graphe pour les questions d'algorithmique. On introduit le problème *Maximum Independant Set (MIS)* :
+
+#problem([*Maximum Independant Set (MIS)*],[Un graphe $G=(V,E)$],$max_(I subset.eq V) {|I| : I^2sect E = emptyset}$)
+
 
 #question(3)[Montrer que si $Delta (G) = d$, il existe une $d$-approximation de *MIS* en $O(|S|^2)$.\
    On montrera la correction et la terminaison de l'algorithme.]
@@ -96,9 +91,9 @@ On dit qu'un graphe $G = (V,E)$ est _$k$ coloriable_ s'il existe une fonction $c
   
 Concernant le premier invarient : La boucle $bold("Tant que")$ ne termine que quand la première condition est respectée.
 
-Pour la deuxième condition, on remarque que si pour une arête $(x, y)$, on ai que $x$ et $y$ a été coloré par la même couleur (et l’on suppose que x a été coloré avant), c’est absurde car $d_(V\\{x})(y) = d_V (y)−1 = d_V (x) −1$ (en retirant x on décrémente le degrée de y, donc il sera
+Pour la deuxième condition, on remarque que si pour une arête $(x, y)$, on ai que $x$ et $y$ a été coloré par la même couleur (et l’on suppose que x a été coloré avant), c’est absurde car $d_(V\\{x})(y) = d_V (y)-1 = d_V (x)-1$ (en retirant x on décrémente le degrée de y, donc il sera
 coloré d’une autre couleur).
-L’algorithme renvoie bien un coloriage (tout les sommets on été choisi) car à la i-ème itération l’on prend tout les sommets de degrée $∆(G) −i$ (et on abaisse des degrées)
+L’algorithme renvoie bien un coloriage (tout les sommets on été choisi) car à la i-ème itération l’on prend tout les sommets de degrée $Delta(G)-i$ (et on abaisse des degrées)
 
 Pour la terminaison, chaque boucle $bold("Tant que")$ termine car V décrémente de 1 à chaque itération de la boucle $bold("Tant que")$
 ])

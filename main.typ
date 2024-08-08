@@ -53,11 +53,14 @@
 // setup heading to the custom one
 #show heading: heading_fct
 
+
 = Algorithmique
 == KMP
 #include "algo/kmp.typ"
 == Tableaux Autoréférents
 #include "algo/autoref.typ"
+== Problème Subsetsum 
+#include "algo/subsetsum.typ"
 == Fenêtre glissante
 #include "algo/window.typ"
 == Approximation de la $k$-coloriabilité d'un graphe
