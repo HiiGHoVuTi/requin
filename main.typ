@@ -39,6 +39,8 @@
 - #levels_emojis.at(4) : Question très difficile pour les plus courageux qui n'ont pas peur de réfléchir longtemps
 - #levels_emojis.at(5) : Question ouverte à la connaissance des autrices, ou de difficulté déraisonnable
 
+
+
 // -------------------- SOMMAIRE --------------------
 #show outline.entry.where(
   level: 1
@@ -54,6 +56,8 @@
 = Algorithmique
 == KMP
 #include "algo/kmp.typ"
+== Tableaux Autoréférents
+#include "algo/autoref.typ"
 == Fenêtre glissante
 #include "algo/window.typ"
 == Approximation de la $k$-coloriabilité d'un graphe
