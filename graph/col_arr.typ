@@ -21,13 +21,13 @@ en couleur entre $alpha$ et $beta$. On dit qu’un sommet $x$ _utilise_ une coul
 
 === Le théorème de Vizing
 
-On souhaite montrer le *théorème de Vizing*: que pour tout graphe, $chi'(G) in {Delta(G), Delta(G)+1}$
+On souhaite montrer le *théorème de Vizing* : que pour tout graphe, $chi'(G) in {Delta(G), Delta(G)+1}$
 
 #question(1)[
   Montrer que pour tout graphe à moins de $4$ aretes, $chi'(G) in {Delta(G), Delta(G)+1}$
 ]
 
-On démontre par récurrence sur le nombre d'arete que pour tout graphe $G = (N, E)$ on a $chi'(G) <= Delta(G) + 1$. On fait l'hérédité, soit $G$ un graphe. On pose $G$ un graphe à $n+1$ aretes. On pose $G' = (V,E')$ le graphe $G$ ou on retire une arete $(a,b) in E$, et $c$ une $Delta(G')+1$ coloration.
+On démontre par récurrence sur le nombre d'arete que pour tout graphe $G = (N, E)$ on a $chi'(G) <= Delta(G) + 1$. On fait l'hérédité, soit $G$ un graphe à $n+1$ aretes. On pose $G' = (V,E')$ le graphe $G$ ou on retire une arete $(a,b) in E$, et $c$ une $Delta(G')+1$ coloration.
 
 On considère $alpha$ une couleur non utillisé par le sommet $a$ et $beta$ une couleur non utillisé par le sommet $b$.
 
@@ -35,7 +35,7 @@ On considère $alpha$ une couleur non utillisé par le sommet $a$ et $beta$ une 
   Montrer que si $b$ n’est pas dans le chemin $a: alpha \/ beta$ (dans $G'$) alors $G$ est $Delta(G) + 1$ coloriable.
 ]
 #question(4)[
-  Montrer que si $b$ est pas dans le chemin $a: alpha \/ beta$ (dans $G'$) alors $G$ est $Delta(G) + 1$ coloriable. En déduire le théorème.
+  Montrer que si $b$ est dans le chemin $a: alpha \/ beta$ (dans $G'$) alors $G$ est $Delta(G) + 1$ coloriable. En déduire le théorème.
 ]
 === Cas particulier
 
@@ -46,7 +46,7 @@ On dit qu'un graphe est de _classe 1_ si $chi'(G) = Delta(G)$ et de _classe 2_ s
 ]
 
 #question(1)[
-  Montrer que les graphe grilles $(V,E)$ avec $V = {(a,b) : a<= x : b <= y }$ et $E = {(a,b),(a+1,b) a< x : b <= y } union {(a,b),(a,b+1) a<= x : b < y }$ sont de classe 1.
+  Montrer que les graphe grilles $(V,E)$ avec $V = {(a,b) : a<= x : b <= y }$ et $E = {((a,b),(a+1,b)) :  a< x : b <= y } union {((a,b),(a,b+1)) : a<= x : b < y }$ sont de classe 1.
 ]
 
 #question(1)[

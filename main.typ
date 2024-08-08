@@ -39,6 +39,7 @@
 - #levels_emojis.at(4) : Question très difficile pour les plus courageux qui n'ont pas peur de réfléchir longtemps
 - #levels_emojis.at(5) : Question ouverte à la connaissance des autrices, ou de difficulté déraisonnable
 
+
 // -------------------- SOMMAIRE --------------------
 #show outline.entry.where(
   level: 1
@@ -51,13 +52,18 @@
 // setup heading to the custom one
 #show heading: heading_fct
 
+
 = Algorithmique
 == KMP
 #include "algo/kmp.typ"
+== Tableaux Autoréférents
+#include "algo/autoref.typ"
+== Problème Subsetsum 
+#include "algo/subsetsum.typ"
 == Fenêtre glissante
 #include "algo/window.typ"
-== Approximation de la $k$-coloriabilité d'un graphe
-#include "algo/colors_aprox.typ"
+== Approximation dans les graphes
+#include "algo/aprox.typ"
 
 = Arbres & Graphes
 == Mots univers
