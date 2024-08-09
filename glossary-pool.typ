@@ -54,6 +54,12 @@ Un magma $(A, +)$ est un ensemble muni d'une loi de composition interne.
 Un _monoïde_ est $(M, +)$ est un #gls(entry: "Magma")[magma] associatif unifère, c'est-à-dire un #gls(entry: "Demi-groupe")[demi-groupe] avec un élément neutre.
     ]
   ),
+  "Nombres de Catalan": (
+    description: [
+      // TODO(Juliette): do better
+      $ C_n = 1/(n+1)binom(2n, n) $
+    ]
+  ),
   "Transformation naturelle": (
     description: [
 #show figure.where(kind: "jkrb_glossary"): it => {it.body}

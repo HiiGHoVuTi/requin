@@ -279,15 +279,16 @@ _On l'appelle la monade libre de $F$._
 
 #correct[
   ```ocaml
-  
   let fmap_G f =
     hoist (fmap_F f)
 
+  let embed x = { fix = fun f -> f x }
+
   let rec monadeG =
-    { pure = fun x -> Pure x
+    { pure = fun x -> embed (Pure x)
     ; join = fun x -> match unwrap x with
       | Pure y -> y
-      | Free gy -> Free (fmap_G monadeG.join)
+      | Free gy -> embed (Free (fmap_G monadeG.join gy))
     }
   ```
 ]

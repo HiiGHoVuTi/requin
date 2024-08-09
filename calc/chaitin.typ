@@ -262,17 +262,6 @@ Enfin, une suite $u in Sigma^NN$ est _calculablement aléatoire_ si aucune super
   On vérifie sans problème que $F$ est constructive et gagnante sur $u$. #align(right, $square$)  
 ]
 
-#question(3)[Montrer que $U$ est presque sûrement calculablement aléatoire.]
-
-#correct[
-  Les supermartingales constructives sont dénombrables, alors que $Sigma^NN$ ne l'est pas.
-  La distribution n'ayant aucun biais\* pour les suites non calculablement aléatoires, elles sont de mesure nulle.
-  Ainsi, la probabilité que $U$ soit calculablement aléatoire est de $1$.
-
-  // TODO(Juliette): mettre quand même la grosse preuve avec des mesures de partout
-  \* démonstration absolument faite avec les mains, par peur d'invoquer les démons de la théorie de la mesure.
-]
-
 #question(3)[Donner une suite non-calculable et non-calculablement-aléatoire.]
 
 #correct[
@@ -282,6 +271,17 @@ Enfin, une suite $u in Sigma^NN$ est _calculablement aléatoire_ si aucune super
   Un bon parieur pourra alors envisager la martingale $M$ telle que $M(epsilon)=1$ et
   $ forall u in Sigma^star, M(1u) := cases(2M(u) "si" |u| "est pair", M(u) "sinon") "et" M(0u) = cases(0 "si" |u| "est pair", M(u) "sinon") $
   Cette martingale est constructive et gagne sur $cal(w)$. #align(right, $square$)
+]
+
+#question(3)[Montrer que $U$ est presque sûrement calculablement aléatoire.]
+
+#correct[
+  Les supermartingales constructives sont dénombrables, alors que $Sigma^NN$ ne l'est pas.
+  La distribution n'ayant aucun biais\* pour les suites non calculablement aléatoires, elles sont de mesure nulle.
+  Ainsi, la probabilité que $U$ soit calculablement aléatoire est de $1$.
+
+  // TODO(Juliette): mettre quand même la grosse preuve avec des mesures de partout
+  \* démonstration absolument faite avec les mains, par peur d'invoquer les démons de la théorie de la mesure.
 ]
 
 #question(4)[Montrer que _calculablement aléatoire_ et _Chaitin-Levin-aléatoire_ sont des propriétés équivalentes.]

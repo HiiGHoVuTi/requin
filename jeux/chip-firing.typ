@@ -97,7 +97,7 @@ Si il existe $n in NN$ et $bold(s) in S^n$ tels que $bold(s) dot j_0$ existe et 
 - Pour tout $bold(s) in S^k$ pour $k>n$, $bold(s) dot j_0$ n'existe pas
 
 
-#question(2)[Montrer que la propriété de confluence forte.]
+#question(2)[Démontrer la propriété de confluence forte.]
 
 #correct[
   Il faut faire attention à la propreté lors de cette preuve.
