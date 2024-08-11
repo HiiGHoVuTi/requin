@@ -17,7 +17,7 @@ Soit $X$ une variable aléatoire discrète intégrable sur l'univers $Omega$.
 #correct[
   $triangle$ On suppose par l'absurde que $X(Omega) subset med ]-oo, x[$.
 
-  $ EE X = sum_(a in X(omega)) a PP{X = a} < x sum_(a in X(Omega)) PP{X = a} = x $
+  $ EE X = sum_(a in X(Omega)) a PP{X = a} < x sum_(a in X(Omega)) PP{X = a} = x $
 
   Donc $EE X < x$, c'est absurde $arrow.zigzag$ #h(1fr) $triangle.l$
 ]
