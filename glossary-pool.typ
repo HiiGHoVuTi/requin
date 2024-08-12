@@ -72,8 +72,8 @@ Une _transformation naturelle_ $alpha$ entre un #gls(entry: "Foncteur")[foncteur
   node((1, 1), $G(y)$),
   edge((0, 0), (0, 1), "->", $alpha_x$),
   edge((1, 0), (1, 1), "->", $alpha_y$),
-  edge((0, 0), (1, 0), "->", $"fmap"F(h)$),
-  edge((0, 1), (1, 1), "->", $"fmap"G(h)$),
+  edge((0, 0), (1, 0), "->", $F(h)$),
+  edge((0, 1), (1, 1), "->", $G(h)$),
 ))
     ]
   )

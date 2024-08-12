@@ -54,7 +54,7 @@ On note désormais $2 := {0,1}$ et $frak(P)(E) = {A subset E}$.
 
 #correct[
   On rappelle que $RR$ est équipotent aux parties de $NN$ car une partie de $NN$ peut représenter un développement binaire d'un réel.
-  Mais comme il n'existe pas de surjection de $NN$ dans $frak(NN)$, $RR$ et $NN$ ne sont pas équipotents. #align(right, $square$)
+  Mais comme il n'existe pas de surjection de $NN$ dans $frak(P)(NN)$, $RR$ et $NN$ ne sont pas équipotents. #align(right, $square$)
 ]
 
 #question(1)[
