@@ -42,7 +42,7 @@ On définit les ensembles $"BV"$ (pour variables liées) et $"FV"$ (pour variabl
 On souhaite que $lambda x. u$ corresponde à `fun x -> u` en `OCaml`, et que $u v$ corresponde à `u v`. On note $u[x := v]$ la substitution dans $u$ de $x$ par $v$.
 _Par exemple_, $(f (x f x))[x := lambda y. y] eq.triple f ((lambda y. y) f (lambda y. y))$.
 
-#question(1)[Expliquer pourquoi simplement replacer toutes les instances de la variable substituée ne suffirait pas à garantir le comportement attendu.]
+#question(1)[Expliquer pourquoi simplement remplacer toutes les instances de la variable substituée ne suffirait pas à garantir le comportement attendu.]
 
 #question(1)[Proposer un algorithme renommant les variables libres _et_ liées d'un terme.
 _Par exemple_, ($x lambda x. x arrow.squiggly x lambda y. y$).

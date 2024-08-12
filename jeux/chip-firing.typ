@@ -111,7 +111,7 @@ Si il existe $n in NN$ et $bold(s) in S^n$ tels que $bold(s) dot j_0$ existe et 
   - Si il existe un unique $s in S$ tel que $s dot j$ existe, la propriété est respectée.
   - Sinon, on se munit de $bold(s) in S^(n+1)$ telle $bold(s) dot j$ est stable. Soit ensuite $bold(v) in S^k$ une partie différente.
     - Si $s_1 = v_1$, l'hypothèse de récurrence nous donne le résultat souhaité.
-    - Sinon, on a le diagramme de la question $3$. D'après celui-ci, $v_1 dot j$ est de hauteur au plus $n$. Par hypothèse de récurrence, on conclut.
+    - Sinon, on a le diagramme de la question $2$. D'après celui-ci, $v_1 dot j$ est de hauteur au plus $n$. Par hypothèse de récurrence, on conclut.
   #align(right, $square$)
 ]
 
@@ -119,7 +119,7 @@ Si il existe $n in NN$ et $bold(s) in S^n$ tels que $bold(s) dot j_0$ existe et 
 
 #correct[
   D'après la question $4$, $bold(s)$ et $bold(v)$ sont de même taille.
-  Pour montrer que chaque sommet est choisi autant de fois, on utilise la question $1$ comme hérédité d'une récurrence sur la taille de $bold(s)$.
+  Pour montrer que chaque sommet est choisi autant de fois, on utilise la question $2$ comme hérédité d'une récurrence sur la taille de $bold(s)$.
 ]
 
 On suppose que $G$ est connexe.

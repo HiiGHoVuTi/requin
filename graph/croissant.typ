@@ -76,7 +76,7 @@ let minimum = function
   _Hérédité_: On suppose que si $k <= n$, alors il existe $k!$ arbres croissants à $k$ noeuds.
   Pour construire un arbre croissant à $n+1$ noeuds, on peut
   - Choisir $k in [|0, n|]$ la taille du fils gauche (_$n+1$ choix_)
-  - Choisir $g$ la partie des noeuds qui iront au fils gauche (_$binom(n+1, k)$ choix_)
+  - Choisir $g$ la partie des noeuds qui iront au fils gauche (_$binom(n, k)$ choix_)
   - Construire le fils gauche à $g$ noeuds (_HR: $k!$ choix_)
   - Construire le fils droit à $n-g$ noeuds (_HR: $(n-k)!$ choix_)
   Au total, $(n+1)binom(n+1, k)k!(n-k)!$ choix ont été faits.

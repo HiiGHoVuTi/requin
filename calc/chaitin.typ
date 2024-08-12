@@ -134,7 +134,7 @@ Si $cal(Q)$ est un autre langage, on notera $cal(K_Q)(u)$ la quantité analogue.
   On se munit de $R in cal(Q)$ un programme simulant l'exécution de $cal(R)$. On pose $k in NN$ la taille de $R$.
 
   $square$ Soit $u in NN^NN$.
-  - Si $cal(K_R)(u) = +oo$, alors $cal(K_Q)(u)$ aussi car $u$ n'est pas calculable.
+  - Si $cal(K_Q)(u) = +oo$, alors $cal(K_R)(u)$ aussi car $u$ n'est pas calculable.
   - Sinon, $u$ est calculable et il existe $r in cal(R)$ un programme de longueur $cal(K_R)(u)$ qui calcule $u$. Comme $R$ simule l'évaluation dans $cal(R)$, alors le programme $q in cal(Q)$ qui passe $r$ en argument à $R$ calcule $u$. La taille de $q$ est $k+cal(K_R)(u)$ donc $cal(K_Q)(u) <= k + cal(K_R)(u)$. #h(1fr) $square$
 
   On conclut que $cal(K_Q)<= k + cal(K_R)$. #align(right, $square$)
@@ -181,7 +181,7 @@ On pose $psi(m) := min {n in NN, cal(K)(phi(n)) >= m}$ puis $frak(E) = cal(K) co
 
   Alors $frak(E)(m) >= m$ et $frak(E)(m) = cal(O)(log m)$ soit $frak(E)(m) <= A log (m)$ soit encore $-frak(E)(m) >= A log(m)$.
   En sommant ces deux inégalités, $ forall m in NN, 0 >= A log (m) - m $
-  Par croissances comparées, $(A log(m) - m) -->_(m -> +oo) -oo$ donc il existe $m_0 in NN$ tel que $ A log (m) - m <= 861 $
+  Par croissances comparées, $(A log(m) - m) -->_(m -> +oo) -oo$ donc il existe $m_0 in NN$ tel que $ A log (m) - m <= -861 $
   On aurait $0 >= 861$, absurde $arrow.zigzag$ #h(1fr) $triangle.l$
 
   On conclut que $cal(K(K)) = +oo$. #align(right, $square$)
@@ -234,7 +234,7 @@ Enfin, une suite $u in Sigma^NN$ est _calculablement aléatoire_ si aucune super
 
 #correct[
   On peut vérifier que $ F(u) := cases(2^n "si" exists n in NN\, u = 1^n, 0  "sinon") $
-  est une (super)martingale. Celle-ci gagne sur la suite constante à $1$, qui est le développement binaire de $1$.
+  est une (super)martingale. Celle-ci gagne sur la suite constante à $1$, qui est un développement binaire de $1$.
   On en déduit que $1$ n'est pas un nombre aléatoire. #align(right, $square$)
 ]
 
@@ -256,8 +256,8 @@ Enfin, une suite $u in Sigma^NN$ est _calculablement aléatoire_ si aucune super
 
   $square$ On suppose avoir construit $u^n$ et $F$ sur tous les mots de longueur inférieure à $n$.
 
-  On construit $u^(n+1)$ avec notre programme et note $epsilon in Sigma$ le nouveau bit. On pose 
-  $ forall u in Sigma^n,  F(epsilon u) = 2 F(u) "et" F(overline(epsilon)u) = 0 $ #align(right, $square$)
+  On construit $u^(n+1)$ avec notre programme et note $delta in Sigma$ le nouveau bit, puis $overline(delta)$ sa négation. On pose 
+  $ forall u in Sigma^n,  F(delta u) = 2 F(u) "et" F(overline(delta)u) = 0 $ #align(right, $square$)
 
   On vérifie sans problème que $F$ est constructive et gagnante sur $u$. #align(right, $square$)  
 ]
@@ -344,7 +344,7 @@ On définit $Omega in RR$ comme $Omega := PP(P "termine")$, on l'identifiera à 
 #question(1)[Calculer $cal(K)(Omega)$.]
 
 #correct[
-  $triangle$ Supposons par l'absurde que $cal(Omega) < +oo$. En particulier, $Omega$ est une suite calculable et on peut déterminer $Omega^n$ pour tout $n in NN$ en temps fini.
+  $triangle$ Supposons par l'absurde que $cal(K)(Omega) < +oo$. En particulier, $Omega$ est une suite calculable et on peut déterminer $Omega^n$ pour tout $n in NN$ en temps fini.
   D'après la question précédente, on pourrait résoudre le problème de l'arrêt en un temps fini, c'est absurde $arrow.zigzag$ #h(1fr) $triangle.l$
 
   Ainsi $cal(K)(Omega) = +oo$. #align(right, $square$)
