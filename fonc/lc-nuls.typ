@@ -9,7 +9,7 @@
 
 _Ce sujet introduit la théorie derrière les languages fonctionnels comme OCaml : le lambda-calcul_
 
-== Définitions et $alpha$-équivalence
+=== Définitions et $alpha$-équivalence
 
 Soit $cal(V) = {a,b,x,...}$ un ensemble infini dénombrable de _variables_. Soit $Lambda$ l'ensemble des _lambda termes_ défini inductivement par:
 #align(center, grid(columns: (1fr, 1fr, 1fr), 
@@ -82,14 +82,16 @@ Si une expression $a$ est présente dans $A$ une autre expression, on note cela 
 On appelle un _calcul_ de $A$ une série finie de dérivations $A -> A_1 -> ... -> A_n$. On note cela $A ->^n A_n$ ou encore $A ->^* A_n$. Si $A_n$ est sous forme normale, on appelle cela un _calcul normalisant_. Si tout les calculs à partir de $A$ sont de longeur inférieur à un certain $n$, on dit que $A$ est fortement normalisant.
 
 On notera $lambda x_1 x_2 ... x_n. e$ pour $lambda x_1. lambda x_2. ... lambda x_n. e$. On définit $I := lambda x.x$, $K := lambda y x. y$ et $Delta := lambda x.x space x$
-== Introduction
 
-=== Préliminaires 
+=== Introduction
+
+==== Préliminaires 
+
 #question(0)[ Donner un calcul normalisant de $K space K space I$, de $I space I$ et de $K space I space Delta$]
 
 #question(1)[ Montrer que $Delta space Delta$ ne possède pas de calcul normalisant.]
 
-=== Graphe des réductions
+==== Graphe des réductions
 
 Soit $e in Lambda$, on pose $G_e = (S_e,A_e)$ le _graphe orienté des réductions de $e$_ avec $S_e = { e' in Lambda : e ->^* e'}$ et $A_e = {(x,y) in S_e^2 :  x -> y }$
 
@@ -143,7 +145,8 @@ Soit $e in Lambda$, on pose $G_e = (S_e,A_e)$ le _graphe orienté des réduction
 #question(3)[
   Soit $n >0$, donner une expression $e in Lambda$ dont le graphe des réductions soit le cycle de longeur $n$. 
 ]
-=== Booléens
+
+==== Booléens
 
 Soient $top := lambda x y.space x$, $bot := lambda x y.space y$ et $"if" := lambda b c_1 c_2. space b space c_1 space c_2$ On pose $B := {top, bot}$ 
 
@@ -155,9 +158,9 @@ Soient $top := lambda x y.space x$, $bot := lambda x y.space y$ et $"if" := lamb
 $ "and" b space b' ->^* cases(top "si" b = b' = top, bot "sinon") $
 ]
 
-== Résultats Théoriques, $beta$-équivalence
+=== Résultats Théoriques, $beta$-équivalence
 
-=== $beta$-équivalence
+==== $beta$-équivalence
 
 On pose $<->$ la fermeture symétrique de $->$ : on a $x <-> y$ si et seulement si $x -> y or y -> x$.
 
@@ -171,7 +174,7 @@ On pose $G = (Lambda,A)$ un graphe orienté infini avec $A = {(x,y) in E^2 : x -
 
 $=_beta$ est donc la fermeture transitive de $<->$.
 
-=== Confluence
+==== Confluence
 
 _Cette partie contiens beaucoup de lourdes preuves par induction. Elles ne sont pas particulièrement difficile, mais peuvent etre très longues._
 
@@ -208,7 +211,7 @@ On souhaite montrer que la relation $->$ soit confluente. Pour cela, on défini 
   Démontrer que la relation $triangle.r$ est confluente.
 ]
 
-=== Autour de la confluence
+==== Autour de la confluence
 _On pourra admettre que la relation $->^*$ est confluente._
 
 #question(2)[
@@ -223,8 +226,8 @@ _On pourra admettre que la relation $->^*$ est confluente._
   Soit $f in Lambda$, donner $g in Lambda$ tel que pour tout $e in Lambda$, on ai $f(e) =_beta g(e)$ mais $f !=_beta g$.
 ]
 
-== Entiers et opérations
-=== Entiers de Church
+=== Entiers et opérations
+==== Entiers de Church
 
 Soit $n in NN$, on appelle $C_n$ _l'entier de Church_ de $n$ défini par:
 - $C_0 := lambda f x. x$
@@ -245,7 +248,7 @@ Soit $n in NN$, on appelle $C_n$ _l'entier de Church_ de $n$ défini par:
   Définir $"mul" in Lambda$ tel que pour tout $n,m in NN$, $"mul" C_n space C_m ->^* C_(n m)$
 ]
 
-=== Soustraction
+==== Soustraction
 L'objectif est ici d'implémenter $"sub" in Lambda$ tel que $"sub" C_n space C_m ->^* C_(max (n-m,0))$. Pour cela on défini :
 $ "D" := lambda x y z. z space x space y $
 tel que $"D" space x space y$ représente le couple $(x,y)$
@@ -266,14 +269,14 @@ tel que $"D" space x space y$ représente le couple $(x,y)$
   Définir $"sub" in Lambda$ tel que $"sub" C_n space C_m ->^* C_(max (n-m,0))$.
 ]
 
-=== Conditionnels
+==== Conditionnels
 // TODO: if_eq
 
-== Points fixe et récursivité
-=== L'opérateur point-fixe
-=== Récursivité
+=== Points fixe et récursivité
+==== L'opérateur point-fixe
+==== Récursivité
 
-== Typage Simple
-=== Types généraliste
+=== Typage Simple
+==== Types généraliste
 
-== Système F et système T
+=== Système F et système T

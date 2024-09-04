@@ -125,6 +125,8 @@
 #include "math/lawvere.typ"
 == Séries génératrices et formelles
 #include "math/series.typ"
+== Ordinaux
+#include "math/ordinaux.typ"
 
 
 = Glossaire
