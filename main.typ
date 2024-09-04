@@ -40,6 +40,19 @@
 - #levels_emojis.at(5) : Question ouverte à la connaissance des autrices, ou de difficulté déraisonnable
 
 
+*Notation de cet ouvrage*
+
+- L'on utilisera $:=$ pour la définition.
+- On notera $not P$ la négation de la formule $P$.
+- L'on notera $[n] := {1,...,n}$.
+- L'union disjointe est noté $union.sq$.
+- Le $(i+1)$ème élément d'un tableau $T$ est noté $T[i]$. Le préfixe de longueur $i+1$ est $T[... i]$.
+- Le graphe complet à $n$ élément est noté $K_n$.
+- Soit $n,m in NN$, on note $K_(n,m)$ un graphe biparti $(U union.sq V, E)$ avec $|U| = n$ et $|V| = m$ où $E = U times V union V times U$.
+- Soit $X$ un ensemble, on notera $cal(P)(X)$ l'ensemble des parties de $X$ et $cal(P)_f (X)$ l'ensemble des parties finies de $X$.
+- Soit $Sigma$ un alphabet et $w in Sigma^*$, on notera $|w|_alpha$ pour $alpha in Sigma$ le nombre d'occurence de $alpha$ dans $w$
+
+
 // -------------------- SOMMAIRE --------------------
 #show outline.entry.where(
   level: 1
@@ -78,6 +91,10 @@
 #include "graph/croissant.typ"
 == Lemme de König
 #include "graph/konig.typ"
+== Graphe Infinis et Isomorphismes
+#include "graph/infini.typ"
+
+
 
 = Langages formels
 == Language permuté et inclusions
