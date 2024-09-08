@@ -42,15 +42,20 @@
 
 *Notation de cet ouvrage*
 
-- L'on utilisera $:=$ pour la définition.
+- On utilisera $:=$ pour la définition.
+- $NN = {0,1,...}$ est l'ensemble des entiers naturels, $QQ$ l'ensemble des rationnels et $RR$ l'ensemble des réels. On notera $NN^*$, $QQ^*$, $RR^*$ les ensembles privé de $0$ et $QQ_+$ $RR_+$ les ensembles positifs.
 - On notera $not P$ la négation de la formule $P$.
 - L'on notera $[n] := {1,...,n}$.
 - L'union disjointe est noté $union.sq$.
 - Le $(i+1)$ème élément d'un tableau $T$ est noté $T[i]$. Le préfixe de longueur $i+1$ est $T[... i]$.
+- Par défault, les graphes sont fini et non orienté. 
 - Le graphe complet à $n$ élément est noté $K_n$.
 - Soit $n,m in NN$, on note $K_(n,m)$ un graphe biparti $(U union.sq V, E)$ avec $|U| = n$ et $|V| = m$ où $E = U times V union V times U$.
+- On dit que $G = (S,E)$ est un _sous-graphe_ de $G' = (V',E')$ si $V subset.eq V'$ et $E subset.eq E' sect S^2$.
+- Pour $G = (S,E)$ un graphe, pour $V subset.eq S$, on notera $G[V] := (V, E sect V^2)$ le graphe _induit_ par $V$.
+- Un _indépendant_ $I$ ou _anti-clique_ d'un graphe $G = (S,E)$ est tel que $G[I]$ ne contiens pas d'aretes.
 - Soit $X$ un ensemble, on notera $cal(P)(X)$ l'ensemble des parties de $X$ et $cal(P)_f (X)$ l'ensemble des parties finies de $X$.
-- Soit $Sigma$ un alphabet et $w in Sigma^*$, on notera $|w|_alpha$ pour $alpha in Sigma$ le nombre d'occurence de $alpha$ dans $w$
+- Soit $Sigma$ un alphabet et $w in Sigma^*$, on notera $|w|_alpha$ pour $alpha in Sigma$ le nombre d'occurences de $alpha$ dans $w$
 
 
 // -------------------- SOMMAIRE --------------------
@@ -91,9 +96,10 @@
 #include "graph/croissant.typ"
 == Lemme de König
 #include "graph/konig.typ"
-== Graphe Infinis et Isomorphismes
+== Morphisme de Graphes
+#include "graph/morph.typ"
+== Graphes Infinis
 #include "graph/infini.typ"
-
 
 
 = Langages formels

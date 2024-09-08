@@ -273,10 +273,15 @@ tel que $"D" space x space y$ représente le couple $(x,y)$
 // TODO: if_eq
 
 === Points fixe et récursivité
+
 ==== L'opérateur point-fixe
+
 ==== Récursivité
 
 === Typage Simple
+
 ==== Types généraliste
+
+==== Terminaison
 
 === Système F et système T
