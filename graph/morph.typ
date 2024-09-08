@@ -23,7 +23,7 @@ On considère ici le problème de l'isomorphisme de graphe :
   Montrer que le problème de l'isomorphisme de graphe est dans NP.
 ]
 
-Soit $G=(V,E)$ un graphe *orienté*, on définit $L(G)$ le _graphe ligne_ de $G$ par le graphe orienté $(E,E')$ avec $E'$ l'ensemble des arêtes de la forme $((x,y),(y,z))$ pour $(x,y),(y,z) in E$.
+Soit $G=(V,E)$ un graphe non orienté, on définit $L(G)$ le _graphe adjoint_ (_Line Graph_ en anglais) de $G$ par le graphe $(E,E')$ avec $E'$ l'ensemble des arêtes de la forme $((x,y),(y,z))$ pour $(x,y),(y,z) in E$.
 
 #question(2)[
   Calculez le graphe ligne des graphes $K_3$ et $K_(1,3)$
@@ -33,7 +33,7 @@ Soit $G=(V,E)$ un graphe *orienté*, on définit $L(G)$ le _graphe ligne_ de $G$
   C'est $K_3$
 ]
 
-On souhaite montrer ici le théorème de Witney sur l'isomorphisme de graphe : deux graphes sont isomorphe ssi leurs graphe ligne le sont, sauf pour $K_3$ et $K_(1,3)$.
+On souhaite montrer ici le théorème de Witney sur l'isomorphisme de graphe : deux graphes sont isomorphe ssi leurs graphes ligne le sont, sauf pour $K_3$ et $K_(1,3)$.
 
 #question(3)[
 

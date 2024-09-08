@@ -9,7 +9,6 @@
   // collaborators: ("Ben Bitdiddle", "Louis Reasoner")
 )
 
-
 #import "@preview/codly:1.0.0": *
 #show: codly-init.with()
 

@@ -43,6 +43,15 @@ On définit par induction l'ensemble des _variables liées_ $"BV"$ et des _varia
   [$lambda x. f space (lambda f. f space (f space x))$]
 ))]
 
+#correct[
+  #align(center, grid(columns: (1fr, 1fr, 1fr, 1fr), 
+  [$"FV" = emptyset\ "BV" = {x}$],
+  [$"FV" = emptyset\ "BV" = {f, x}$],
+  [$"FV" = {y}\ "BV" = {f, x}$],
+  [$"FV" = {f} \ "BV" = {x, f}$],
+  ))
+]
+
 Soient $e,a in Lambda$ et $x in cal(V)$, on défini l'_opération de substitution_ $e[x <- a]$ inductivement par :
 #align(center, grid(columns: (1fr, 1fr),
   [$x [x <- a] := a$],
