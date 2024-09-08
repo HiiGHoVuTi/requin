@@ -226,7 +226,7 @@ _On rappelle que `intCell`$n$ est définie en partie I_.
   La limite est `int list`, car `intCell`$n$ représente les suites d'entiers à support dans $[|0, n|]$.
 ]
 
-On pose pour $F$ un foncteur fixé `type `$F$`_fix = { fix: (* pour tout *) 'a. ('a `$F$` -> 'a) -> 'a }`, soit $"fix"(F) := (forall a. med F a -> a) -> a$.
+On pose pour $F$ un foncteur fixé `type `$F$`_fix = { fix: (* pour tout *) 'a. ('a `$F$` -> 'a) -> 'a }`, soit $"fix"(F) := forall a. med (F a -> a) -> a$.
 
 #question(3)[Implémenter une bijection entre les types $F("fix"(F))$ et $"fix"(F)$.]
 
