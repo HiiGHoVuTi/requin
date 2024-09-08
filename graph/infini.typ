@@ -3,9 +3,7 @@
 
 Dans cet exercice, le terme "graphe" fait aussi bien référence au graphes infinis que les graphes finis.
 
-Le graphe _grille_ est le graphe $(ZZ^2, E)$ avec $E$ l'ensemble des paires qui ne diffère que d'un (1) en une coordonnée.
-
-Le graphe _ligne_ est le graphe $(ZZ, {(x,y) | |x-y| = 1 : x,y in ZZ})$
+Le graphe _grille_ est le graphe $(ZZ^2, E)$ avec $E$ l'ensemble des paires qui ne diffère que d'un (1) en une (1) coordonnée. Le graphe _ligne_ est le graphe $(NN, {(x,y) | |x-y| = 1 : x,y in NN})$. 
 
 === Bouts et Rayon infinis
 
@@ -28,25 +26,50 @@ On dit que deux rayons $r_1,r_2$ sont équivalents s'il existe un troisième ray
   On vérifie les axiomes :
   - *Réflexivité* On a que $r_1 tilde r_1$ car en posant $r_3 := r_1$ on a bien ${r_i : i in NN} sect {r_i : i in NN}$ infini
   - *Symmétrie* Si $r_1 tilde r_2$, alors il existe $r_3$ rencontrant $r_1$ et $r_2$ sur une infinité de sommets. Et comme c'est le cas, $r_2 tilde r_1$.
-  - *Transitivité* Supposons $r_1 tilde r_2$ et $r_2 tilde r_3$. On choisi $r'$ (resp. $r''$) qui rencontre une infinité de fois $r_1$ et $r_2$ (resp. $r_2$ et $r_3$). On constuit par récurrence un chemin qui va concaténer des bouts de $r'$ et $r''$ ensemble à tout les fois ou il rencontre $r_2$ :
+  - *Transitivité* Supposons $r_1 tilde r_2$ et $r_2 tilde r_3$. On choisi $r'$ (resp. $r''$) qui rencontre une infinité de fois $r_1$ et $r_2$ (resp. $r_2$ et $r_3$). On constuit par récurrence un chemin qui va concaténer des bouts des autres chemin ensemble avec une idée d'aller-viens :
   - On commence sur $r_1$ jusqu'au prochain indice en commun avec $r'$
-  - On continue sur $r'$ jusqu'au prochain indice en commun avec $r_2$ et tel
-  - On continue sur $r_2$ jusqu'au prochain indice en commun avec $r_2$
+  - On continue sur $r'$ jusqu'au prochain indice en commun avec $r_2$
+  - On continue sur $r_2$ jusqu'au prochain indice en commun avec $r''$
+  - On continue sur $r''$ jusqu'au prochain indice en commun avec $r_3$
+  - On continue sur $r_3$ jusqu'au prochain indice en commun avec $r''$
+  - On continue sur $r''$ jusqu'au prochain indice en commun avec $r_2$
+  - ... On fait $r_1 -> r' -> r_2 -> r'' -> r_3 -> r'' -> r_2 -> r' -> r_1$ et recommence
+
+  *TRES IMPORTANT A NOTER* : Il est possible que un des chemins que l'on souhaite emprunter possède des noeuds déjà empruntés, et par conséquent le chemin que l'on crée ne serai pas un rayon (tout les sommets doivent etre distincts). Mais comme à chaque étape le nombre de noeuds déjà visité est fini, il suffit de rester sur le chemin actuel jusqu'à ce que le prochain chemin n'a plus de noeud en commun avec les noeuds déjà visité.
 ]
 
 #question(2)[
   Montrer que tout les rayons du graphe grilles sont équivalent.
 ]
 
+#correct[
+  Soit $r_1$ et $r_2$ deux rayons. On considère le chemin qui fait des carrés en spirale. Alors comme il couvre tout $ZZ^2$, il passe par tout les sommets de $r_1$ et de $r_2$.
+]
+
 Un _bout_ est une classe d'équivalence de $tilde$. On dénote l'ensemble des bouts de $G$ par $cal(B)(G)$.
 
+
 #question(0)[
-  Montrer que le graphe grille et ligne ne possède qu'un unique bout.
+  Combien (si infini, indiquer si c'est dénombrable ou indénombrable) de bouts possède les graphes suivants :
+ - Le graphe ligne
+ - Le graphe grille
+ - Le graphe $(ZZ, E)$ avec $E$ l'ensemble des couples de la forme $(x,x+1)$ ou $(x+1,x)$
+ - Le graphe $(Sigma^*, E)$ avec des arretes entre $w$ et $w alpha$ pour $alpha in Sigma := {a b}$
+]
+
+#correct[
+
+  - On a montrer que tout les chemins du graphe grille sont équivalents, il y a donc qu'une unique classe d'équivalence et donc 1 seul bout.
+  - Soit $r_1, r_2$ deux rayons du graphe ligne. Ils sont de la forme $(k + i)_(i in NN)$, car ne peuvent que aller vers le coté positif (s'ils vont dans le coté négatif, ils tombent à $0$ et sont bloqués). On pose $r_3 = r_2$,et on note $k_1, k_2$ les deux constantes $k$ pour $r_1$ et $r_2$. Alors $r_3$ et $r_2$ ont les sommets $[| max (k_1, k_2) ; +oo [|$ en commun (et $r_2 = r_3$ donc ils ont bien une infinité de somemt en commun).
+    Donc tout les rayons sont équivalents, il n'y a donc qu'un unique bout. 
+  - 2 bouts.
+  - Un nombre indénombrable de bouts, précisément un pour chaque $Sigma^NN$.
 ]
 
 On note $C_G (x)$ la composante connexe de $x in S$ pour $G = (S,E)$ un graphe. On dénote par $G - T$ le graphe $G[S\\T]$ pour $T subset.eq S$.
 
 // https://link.springer.com/content/pdf/10.1007/BF02993589.pdf
+// 
 #question(1)[
   Soit $G = (S,E)$ un graphe infini, $U$ un bout de $G$ et $T subset.eq S$ fini. Montrer qu'il existe qu'une seule composante connexe $C$ tel qu'il existe un rayon $r in U$ ne passant pas par $T$. On dénote cette composante connexe par $C_(G - T) (U)$
 ]
@@ -54,7 +77,13 @@ On note $C_G (x)$ la composante connexe de $x in S$ pour $G = (S,E)$ un graphe. 
 On dit qu'un graphe infini est localement fini si chaque sommet est de degrée fini. On dit qu'un bout $U$ du graphe $G = (S,E)$ est _libre_ s'il existe un $T subset.eq S$ fini tel que $C_(G - T) (U) != C_(G - T)(V)$ pour tout $V in cal(B)(G)$ différent de $U$.
 
 #question(1)[
-  Donner un exemple d'un graphe avec un bout non libre.
+  Donner un exemple d'un graphe avec un unique bout non libre.
+]
+
+#correct[
+  On se donne pour $Sigma = {a,b}$ le graphe $(a^* b^*, E )$ ou $E$ est l'ensemble de couple de la forme $(w, w . alpha)$ pour $alpha in Sigma$ (ou symétriquement).
+
+  On montrer que le bout du rayon $(a^i)_(i in NN)$ est libre : soit $T$ un ensemble fini de noeuds. Comme chaque noeud s'écrit $$
 ]
 
 #question(3)[
