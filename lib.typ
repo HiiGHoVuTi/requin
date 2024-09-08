@@ -1,4 +1,4 @@
-#let show_correct = true
+#let show_correct = false
 
 
 #let q_count = counter("questions")
