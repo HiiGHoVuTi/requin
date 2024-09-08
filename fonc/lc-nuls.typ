@@ -263,19 +263,19 @@ $ "D" := lambda x y z. z space x space y $
 tel que $"D" space x space y$ représente le couple $(x,y)$
 
 #question(0)[
-  Montrer que soient $e,e' in Lambda$, on a $"D" e e' top ->^* e$ et $"D" e space e' bot ->^* e'$
+  Montrer que soient $e,e' in Lambda$, on a $"D" space e space e' space top ->^* e$ et $"D" space e space e' bot ->^* e'$
 ]
 
 #question(2)[
- Définir $"A" in Lambda$ tel que soit $e in Lambda$ on a $"A" ("D" space e space C_n) ->^* "D" C_n space C_(n+1)$ 
+ Définir $"A" in Lambda$ tel que soit $e in Lambda$ on a $"A" space ("D" space e space C_n) ->^* "D" space C_n space C_(n+1)$ 
 ]
 
 #question(3)[
-  Définir $"decr" in Lambda$ tel que $"decr" C_n ->^* C_(max(n-1,0))$ 
+  Définir $"decr" in Lambda$ tel que $"decr" space C_n ->^* C_(max(n-1,0))$ 
 ]
 
 #question(1)[
-  Définir $"sub" in Lambda$ tel que $"sub" C_n space C_m ->^* C_(max (n-m,0))$.
+  Définir $"sub" in Lambda$ tel que $"sub" space C_n space C_m ->^* C_(max (n-m,0))$.
 ]
 
 ==== Conditionnels
