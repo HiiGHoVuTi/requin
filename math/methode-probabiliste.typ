@@ -101,7 +101,7 @@ Soit $bold(a) in CC^10$. On dira que $bold(p) in CC^10$
 [- _couvre_ $bold(a)$ si $ bold(a) subset union.big_(x in bold(p)) overline(cal(B))(x, 1) $],
 [- est _sans superposition_ si $ forall x,y in bold(p), x != y => overline(cal(B))(x, 1) sect overline(cal(B))(y, 1) = emptyset $]
 )
-#question(3)[
+#question(4)[
   Montrer qu'il existe $bold(p) in CC^10$ couvrant $bold(a)$ sans superposition.
 ]
 
@@ -155,7 +155,7 @@ La propriété à laquelle on s'intéresse ici est la _propriété de distance_ 
 
 On pose enfin $cal(P)(n) := forall A in frak(P)(CC), med (|A|=n) ==> (exists { a_1...a_k } subset A, med cal(D)(a_1...a_k))$
 
-#question(4)[
+#question(3)[
   Calculer $inf {n in NN, cal(P)(n) }$.
 ]
 
