@@ -101,7 +101,7 @@ Soit $bold(a) in CC^10$. On dira que $bold(p) in CC^10$
 [- _couvre_ $bold(a)$ si $ bold(a) subset union.big_(x in bold(p)) overline(cal(B))(x, 1) $],
 [- est _sans superposition_ si $ forall x,y in bold(p), x != y => overline(cal(B))(x, 1) sect overline(cal(B))(y, 1) = emptyset $]
 )
-#question(3)[
+#question(4)[
   Montrer qu'il existe $bold(p) in CC^10$ couvrant $bold(a)$ sans superposition.
 ]
 

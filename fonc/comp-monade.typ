@@ -75,6 +75,7 @@ On pose `type 'b intCell = (int, 'b) cell`. On définit la $n$-ième itérée de
   La fonction `fmap` applique sa fonction paramètre à tous les éléments de la structure.
 ]
 
+// FIXME(Juliette): complètement faux ?
 Soit `type 'r cont = { runCont: 'a. ('a -> 'r) -> 'r }`, soit $"cont"(rho) := (forall alpha. med alpha -> rho) -> rho$.
 
 #question(2)[ Montrer que `cont` est un foncteur. ]
@@ -88,7 +89,7 @@ Soit `type 'r cont = { runCont: 'a. ('a -> 'r) -> 'r }`, soit $"cont"(rho) := (f
 
 === Quelques monades
 
-Une _monade_ $M$ est un foncteur munie de la structure suivante:
+Une _monade_ $M$ est un foncteur muni de la structure suivante:
 ```ml
 type monadeM = 
   { pure : (* pour tout *) 'a.      'a -> 'a M
