@@ -155,7 +155,7 @@ La propriété à laquelle on s'intéresse ici est la _propriété de distance_ 
 
 On pose enfin $cal(P)(n) := forall A in frak(P)(CC), med (|A|=n) ==> (exists { a_1...a_k } subset A, med cal(D)(a_1...a_k))$
 
-#question(4)[
+#question(3)[
   Calculer $inf {n in NN, cal(P)(n) }$.
 ]
 

@@ -88,6 +88,10 @@
 #include "lang/continuables.typ"
 == Puissance et racine de languages
 #include "lang/pow_sqrt.typ"
+== Monoïde syntaxique
+#include "lang/mon-syn.typ"
+== Dangling else
+#include "lang/dangling.typ"
 
 
 = Théorie des jeux
@@ -103,16 +107,22 @@
 #include "calc/ens_fct.typ"
 == Oméga de Chaitin
 #include "calc/chaitin.typ"
+== Espaces vectoriels calculables
+#include "calc/ev.typ"
 
 = Logique
 == Compacité
 #include "log/compacite.typ"
+== SAT et typage
+#include "log/sat-types.typ"
 
 = Langages fonctionnels
 == Lambda calcul pour les nuls
 #include "fonc/lc-nuls.typ"
 == Composition monadique
 #include "fonc/comp-monade.typ"
+== Optique des données
+#include "fonc/optique.typ"
 
 = Mathématiques pour l'informatique
 == Monoïdes libres, langages et actions
@@ -125,6 +135,8 @@
 #include "math/lawvere.typ"
 == Séries génératrices et formelles
 #include "math/series.typ"
+== Marches aléatoires
+#include "math/marche.typ"
 
 
 = Glossaire
