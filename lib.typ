@@ -43,8 +43,6 @@
 #show heading: heading_fct
 
 
-
-
 #let question(score, question) = {
 
   [ #levels_emojis.at(score) *Question #q_count.display()* #h(10pt) #question #h(1fr) /*#array.range(5).map(i => if i < score {$star.filled$} else {$star.stroked$}).sum()*/ \ ]
@@ -89,3 +87,19 @@
   set align(left)
 }
 
+#let prbl(name) = {
+  box(stroke: black, baseline: 3pt, inset: 3pt, [#name])
+}
+#let theo(content, title: none) = {
+  if title == none {
+    title = [ *-- Théorème --* ]
+  } else {
+    title = [*-- Théorème #title --*]
+  }
+  align(center,
+  rect(width: 400pt)[
+    #title
+    #set align(left)
+    #content
+  ])
+}

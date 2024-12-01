@@ -82,7 +82,6 @@
 == Approximation dans les graphes
 #include "algo/aprox.typ"
 
-
 = Arbres & Graphes
 == Mots univers
 #include "graph/univers.typ"
@@ -92,6 +91,8 @@
 #include "graph/bipartition.typ"
 == Coloration d'aretes
 #include "graph/col_arr.typ"
+== Couplages
+#include "graph/couplages.typ"
 == Théorème de Turán
 #include "graph/turan.typ"
 == Arbres croissants

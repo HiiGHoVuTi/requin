@@ -15,7 +15,7 @@ On pose $D_n = L(cal(G)_n)$ le langage des mots de dyck  engendrée par $cal(G)_
 ]
 
 
-On dit que $phi : Sigma_1^* -> Sigma_2^*$ et un morphisme de mot si
+On dit que $phi : Sigma_1^* -> Sigma_2^*$ est un _morphisme de mot_ si
 $ forall u v in Sigma^*, phi(u v) = phi(u) phi(v) $
 
 
@@ -33,9 +33,9 @@ $ forall u v in Sigma^*, phi(u v) = phi(u) phi(v) $
 
 #question(2)[Montrer que si $L$ est régulier alors $phi(L)$ aussi. Meme question si $L$ est hors-contexte.]
 
-On s'intéresse à montrer le théorème de Chomsky-Schützenberger :
-#align(center)[
-Un langage $L$ est hors-contexte si et seulement il existe un langage régulier $K$, un langage de Dyck $D_n$ et un morphisme alphabétique $phi$ tels que $L = phi(D_n sect K)$.
+On s'intéresse à montrer le théorème suivant :
+#theo(title:[de Chomsky-Schützenberger])[
+Un langage $L$ est hors-contexte si et seulement il existe un langage régulier $K$, un langage de Dyck $D_n$ et un morphisme de mot $phi$ tels que $L = phi(D_n sect K)$.
 ]
 
 #question(2)[
