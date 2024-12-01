@@ -41,7 +41,7 @@ On cherche à prouver que le problème précédent est NP-Complet. Pour cela on 
 ])
 
 #question(1)[
-  Montrer que le problème *SUBSETSUM-VECT* est NP-Complet
+  Montrer que le problème *SUBSETSUM-VECT* est NP
 ]
 
 #question(2)[
