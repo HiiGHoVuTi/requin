@@ -20,7 +20,9 @@ Soit $cal(V) = {a,b,x,...}$ un ensemble infini dénombrable de _variables_. Soit
   *Application*]
 ))
 
-Par exemple, $lambda x. y space x$ est un lambda terme. Le parenthésage se fait à gauche, avec la $lambda$-abstraction qui est de plus faible priorité. Ainsi, l'expression $lambda x. x y z$ se lit $lambda x. ((x space y) space z)$
+Par exemple, $lambda x. y space x$ est un lambda terme. Le parenthésage se fait à gauche, avec la $lambda$-abstraction qui est de plus faible priorité. Ainsi, l'expression $lambda x. x y z$ se lit $lambda x. ((x space y) space z)$.
+
+Intuitivement, il faut comprendre que $lambda x. e$ représente $x |-> e$, et que $e_1 space e_2$ représente $e_1(e_2)$.
 
 On définit par induction l'ensemble des _variables liées_ $"BV"$ et des _variables libres_ $"FV"$ par:
 #align(center, grid(columns: (1fr, 1fr, 1fr), 
@@ -98,7 +100,17 @@ On notera $lambda x_1 x_2 ... x_n. e$ pour $lambda x_1. lambda x_2. ... lambda x
 
 #question(0)[ Donner un calcul normalisant de $K space K space I$, de $I space I$ et de $K space I space Delta$]
 
+#correct[
+  1. $K space K space I = (K K) I = ((lambda x. lambda y.x) K) I -> (lambda y. K) I -> K$
+  2. $I space I = (lambda x. x)I -> I$
+  3. $K space I space Delta -> (lambda y. I) Delta -> I$
+]
+
 #question(1)[ Montrer que $Delta space Delta$ ne possède pas de calcul normalisant.]
+
+#correct[
+  On a $Delta(Delta) -> Delta(Delta)$ qui est l'unique réduction possible. Supposons par l'absurde qu'il existe un calcul normalisant $Delta(Delta) -> A_1 -> ... -> A_n$ avec $A_n$ en forme normale. Par récurrence, on montre que $A_i = Delta(Delta)$, donc $A_n = Delta(Delta)$, or ce n'est pas une forme normale, absurde.
+]
 
 ==== Graphe des réductions
 
@@ -107,7 +119,15 @@ Soit $e in Lambda$, on pose $G_e = (S_e,A_e)$ le _graphe orienté des réduction
 #question(0)[
   Donner le graphe des réduction de $K space I space (Delta space Delta)$ et de $Delta space ((lambda x. Delta) space I)$
 ]
+
 #question(2)[ Donner une expression dont le graphe des réductions est infini]
+
+#correct[
+
+  On note $Delta' = lambda x. x space x space x$. 
+  Par exemple, $Delta' Delta'$. Le graphe des réduction ressemblera à 
+  $ Delta' Delta' -> Delta' Delta' Delta' -> Delta' Delta' Delta' Delta' -> Delta' Delta' Delta' Delta' Delta' -> ... $
+]
 
 #question(2)[ Montrer que si le graphe des réduction d'un $e$ est acyclique fini, alors $e$ est fortement normalisant.]
 
