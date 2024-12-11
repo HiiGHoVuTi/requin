@@ -18,7 +18,7 @@ $
 On pourrait proposer la grammaire suivante :
 $
   S -> "a" | "if b then" S | "if b then" N "else" S 
-  N -> "a" | "if b then" N
+\  N -> "a" | "if b then" N
 $
 
 qui essaie d'associer chaque $"else"$ au $"then"$ le plus proche.

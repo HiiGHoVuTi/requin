@@ -144,7 +144,7 @@ Soit $cal(p)_0$ un pavage de $ZZ^2$ et $M_n$ les ensembles de motifs de taille $
 On poursuit cette construction pour construire une suite $(cal(p)_n)$ de pavages.
 
 #question(4)[Montrer que la suite $(cal(p)_n)$ est stationnaire.]
-#question(4)[Montrer que la limite $cal(p)_oo$ de cette suite est presque périodique.]
+#question(1)[Montrer que la limite $cal(p)_oo$ de cette suite est presque périodique.]
 
 === Axiome du choix
 

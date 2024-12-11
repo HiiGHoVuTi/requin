@@ -191,7 +191,7 @@ $ x space ~_phi space y <=> (x in phi(x) or y in phi(x)) and x != y $
 
 ==== Construction probabiliste
 
-Soit $(X_(i,j))_(i<j) arrow.r.hook cal(B)(0.5)$ une suite de v.a.i.i suivant la loi de bernoulli de paramètre $0.5$. On considère alors le graphe tel que pour $i<j$, on a $(i,j) in E <=> X_(i,j) = 1$
+Soit $(X_(i,j))_(i<j) arrow.r.hook cal(B)(0.5)$ une suite de variables aléatoires indépendantes et identiquement distribuées suivant la loi de Bernoulli de paramètre $0.5$. On considère alors le graphe tel que pour $i<j$, on a $(i,j) in E <=> X_(i,j) = 1$
 
 #question(2)[
   Montrer que le graphe obtenu respecte la propriété d'extension avec probabilité 1.
