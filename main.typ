@@ -90,14 +90,17 @@ Voir le glossaire pour les définitions.
 == Approximation dans les graphes
 #include "algo/aprox.typ"
 
-
 = Arbres & Graphes
 == Mots univers
 #include "graph/univers.typ"
+== Graphes $k$-réguliers et couplages
+#include "graph/k_regular.typ"
 == Bipartition induite
 #include "graph/bipartition.typ"
 == Coloration d'aretes
 #include "graph/col_arr.typ"
+== Couplages
+#include "graph/couplages.typ"
 == Théorème de Turán
 #include "graph/turan.typ"
 == Arbres croissants
@@ -120,6 +123,9 @@ Voir le glossaire pour les définitions.
 #include "lang/continuables.typ"
 == Puissance et racine de languages
 #include "lang/pow_sqrt.typ"
+== Théorème de Chomsky-Schützenberger
+#include "lang/chompsky_schu.typ"
+
 == Monoïde syntaxique
 #include "lang/mon-syn.typ"
 == Dangling else
