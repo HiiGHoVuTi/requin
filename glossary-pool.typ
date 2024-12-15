@@ -2,6 +2,11 @@
 
 // NOTE(Juliette): Dans l'ordre alphabétique !!
 #let glossary-pool = (
+  "Cadre de Kripke": (
+    description: [  
+      Un _cadre de Kripke_ est un graphe _orienté_ $cal(W)=(S_cal(W), A_cal(W))$.
+    ]
+  ),
   Catégorie: (
     description: [
 #show figure.where(kind: "jkrb_glossary"): it => {it.body}
@@ -46,6 +51,12 @@ $F("mor"(cal(C))) subset "mor"(cal(D))$. De plus, $F(g compose f) = F g compose 
   Magma: (
     description: [
 Un magma $(A, +)$ est un ensemble muni d'une loi de composition interne.
+    ]
+  ),
+  "Modèle de Kripke": (
+    description: [
+      // TODO(Juliette): C'EST NECESSAIRE QUAND CA
+      Un _modèle de Kripke_ est un cadre de Kripke muni d'une fonction $h : cal(V) -> frak(P)(S_cal(W))$ telle que $ forall u v in A_cal(W), h(u) => h(v) $
     ]
   ),
   Monoïde: (

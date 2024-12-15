@@ -89,6 +89,8 @@ Voir le glossaire pour les définitions.
 #include "algo/window.typ"
 == Approximation dans les graphes
 #include "algo/aprox.typ"
+== Théorème de Cook-Levin
+#include "algo/cook.typ"
 
 = Arbres & Graphes
 == Mots univers
@@ -125,7 +127,6 @@ Voir le glossaire pour les définitions.
 #include "lang/pow_sqrt.typ"
 == Théorème de Chomsky-Schützenberger
 #include "lang/chompsky_schu.typ"
-
 == Monoïde syntaxique
 #include "lang/mon-syn.typ"
 == Dangling else
@@ -151,8 +152,12 @@ Voir le glossaire pour les définitions.
 = Logique
 == Compacité
 #include "log/compacite.typ"
-== SAT et typage
-#include "log/sat-types.typ"
+// == SAT et typage
+// #include "log/sat-types.typ"
+== Modèles non-classiques
+#include "log/nonclassical.typ"
+== Logique temporelle
+#include "log/temporal.typ"
 
 = Langages fonctionnels
 == Lambda calcul pour les nuls
