@@ -6,7 +6,7 @@ On considère un jeu à deux joueurs où $N>0$ objets sont disposés sur une tab
   
 On appellera Alice le joueur qui commence et Bob le deuxième joueur.
 
-#question(1)[
+#question(0)[
   Dessiner le graphe des états pour $A = {1,3,4}, N = 8$. Qui possède une stratégie gagnante?
 ]
 
@@ -17,7 +17,7 @@ On appellera Alice le joueur qui commence et Bob le deuxième joueur.
   - $A = {2k+1 | k in NN}$
 ]
 
-#question(1)[Si $max(A) <= N$, proposer un algorithme qui décide si Alice possède une stratégie gagnante pour un $N$ donné.]
+#question(2)[Si $max(A) <= N$, proposer un algorithme qui décide si Alice possède une stratégie gagnante pour un $N$ donné.]
 
 #correct([
 0. TODO

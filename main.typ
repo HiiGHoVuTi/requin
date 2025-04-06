@@ -152,6 +152,8 @@ Voir le glossaire pour les définitions.
 = Logique
 == Compacité
 #include "log/compacite.typ"
+== Système à la Hilbert
+#include "log/hilbert.typ"
 // == SAT et typage
 // #include "log/sat-types.typ"
 == Modèles non-classiques
