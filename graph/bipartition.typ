@@ -5,7 +5,7 @@ Soit $G = (S,A)$ un graphe puis $phi : A -> {mono(R), mono(B)}$. On note $r$ le 
 
 Un sous-graphe induit _triangle_ est un triplet ${x,y,z} subset S$ tel que $G[{x,y,z}] tilde.eq K_3$.
 
-On suppose que dans tout sous-graphe induit triangle possède au moins une arête rouge.
+On suppose que dans tout sous-graphe induit triangle, il y a au moins une arête rouge.
 
 On note $n in NN$ la taille de la plus grande partie de $S$ qui induit un graphe biparti.
 
