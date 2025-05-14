@@ -115,6 +115,8 @@ Voir le glossaire pour les définitions.
 #include "graph/infini.typ"
 == Théorème de Kruskal
 #include "graph/kruskal-tree.typ"
+== Calcul différentiel extérieur en montagne
+#include "graph/ext-calc.typ"
 
 = Langages formels
 == Language permuté et inclusions
