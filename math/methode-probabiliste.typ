@@ -1,8 +1,7 @@
 #import "../lib.typ": *
 #show heading: heading_fct
 
-#import "@preview/gloss-awe:0.0.5": gls
-#show figure.where(kind: "jkrb_glossary"): it => {it.body}
+
 
 #import "@preview/cetz:0.2.2"
 
@@ -38,7 +37,7 @@ On note ensuite $H := G[S^dagger]$ et $overline(H) := overline(G)[S^dagger]$.
 ]
 
 #correct[
-  $ "cr"(overline(H)) >= "cr"(H) >= m(H) - 3 n(H) $ d'après la #gls(entry: "Formule d'Euler")[_formule d'Euler_].
+  $ "cr"(overline(H)) >= "cr"(H) >= m(H) - 3 n(H) $ d'après la _formule d'Euler_.
 ]
 
 #question(1)[

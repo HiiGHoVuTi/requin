@@ -1,8 +1,7 @@
 #import "../lib.typ": *
 #show heading: heading_fct
 
-#import "@preview/gloss-awe:0.0.5": gls
-#show figure.where(kind: "jkrb_glossary"): it => {it.body}
+
 
 === Demi-groupes, monoïdes et groupes
 
@@ -91,9 +90,9 @@ Mettre en bijection $cal(L)$ et l'ensemble des arbres binaires à $n$ noeuds. D�
 #correct[
   À une somme on associe un arbre dont les noeuds sont les $+$ et leurs enfants sont les termes sommés (donc la représentation sous forme d'arbre de la somme).
 
-  Pour dénombrer les arbres à $n$ noeuds, on peut utiliser la méthode des #gls(entry: "Classe combinatoire")[classes combinatoires], si $cal(T)$ est la classe des arbres binaires, $ cal(T) = cal(E) + cal(Z) times cal(T)^2 $
+  Pour dénombrer les arbres à $n$ noeuds, on peut utiliser la méthode des demi-groupe, si $cal(T)$ est la classe des arbres binaires, $ cal(T) = cal(E) + cal(Z) times cal(T)^2 $
   Ainsi, $T = 1 + Z T^2$ donc $Z T^2 - T + 1 = 0$ et enfin $T = (1 plus.minus sqrt(1 - 4Z))/(2 Z)$. Par continuité, on écarte la solution en $+$.
-  En faisant un développement en série entière, on retrouve les #gls("Nombres de Catalan").
+  En faisant un développement en série entière, on retrouve les magma.
 ]
 
 On considère maintenant posséder une machine capable d'exécuter $omega in NN^star$ opérations "$+$" simultanées.

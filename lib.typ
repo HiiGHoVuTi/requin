@@ -1,6 +1,5 @@
 #let show_correct = false
 
-
 #let q_count = counter("questions")
 
 #let setup_ex() = {
@@ -103,3 +102,11 @@
     #content
   ])
 }
+
+#let show-extra(it) = {
+  set text(lang: "fr")
+  show math.equation: set text(font: "Latin Modern Math", fallback: true)
+  it
+}
+
+#let sc(x) = smallcaps(text(x, font: "New Computer Modern"))

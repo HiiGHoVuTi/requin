@@ -1,8 +1,8 @@
 {
-  description = "A Typst project";
+  description = "ReQuIn";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     typix = {
       url = "github:loqusion/typix";
@@ -37,6 +37,7 @@
         fontPaths = [
           # Add paths to fonts here
           # "${pkgs.roboto}/share/fonts/truetype"
+         "fonts"
         ];
 
         virtualPaths = [

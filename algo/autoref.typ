@@ -1,13 +1,13 @@
 #import "../lib.typ": *
 #show heading: heading_fct
 
-On dit qu'un tableau $T$ d'entiers de longueur $n$ est _auto-référent_ si pour tout $i < n$, $T[i]$ représente le nombre d’occurrence de $i$ dans $T$. Les tableaux commence à l'indice 0.
+On dit qu'un tableau $T$ d'entiers de longueur $n$ est _auto-référent_ si pour tout $i < n$, $T[i]$ représente le nombre d'occurrences de $i$ dans $T$. Les tableaux commencent à l'indice 0.
 
 Par exemple, $[1,2,1,0]$ est un tableau autoréférent de longueur 4.
 
 #question(0)[Donner le deuxième tableau autoréférent de longueur 4]
-#question(1)[Donner un code $"C"$ qui vérifie si un tableau de longueur $n$ est autoréférent en $O(n)$]
-#question(2)[Donner un code $"C"$ de recherche exaustive qui renvoie le nombre de tableaux référent de longueur $k$]
+#question(1)[Donner un programme `C` qui vérifie si un tableau de longueur $n$ est autoréférent en $O(n)$]
+#question(2)[Donner un programme `C` de recherche exhaustive qui renvoie le nombre de tableaux autoréférents de longueur $k$]
 
 #question(2)[Montrer que pour $n>6$, il existe un tableau auto-référent de longueur $n$] 
 
@@ -19,7 +19,7 @@ int is_auto_ref(int* arr, int n) {
   for (int i=0;i<n;i++) { // init
     occ[i] = 0;
   }
-  for (int i=0;i<n;i++) { // fill the occurence table
+  for (int i=0;i<n;i++) { // fill the occurrence table
     if (arr[i]>=n || arr[i]<0)
       return 0;
     occ[arr[i]]++;

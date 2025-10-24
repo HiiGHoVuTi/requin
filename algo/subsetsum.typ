@@ -1,28 +1,33 @@
 #import "../lib.typ": *
 #show heading: heading_fct
 
+#let subsetsum = sc("SubsetSum")
+#let subsetsumv = sc("SubsetSumVect")
+#let subsetsums = sc("SubSumSpace")
+
 On considère le problème suivant :
-#problem([SUBSETSUM],[$n in NN$ et $a_1, a_2, ..., a_n, S in NN$],[
+#problem(subsetsum,[$n in NN$ et $a_1, a_2, ..., a_n, S in NN$],[
   Est-ce qu'il existe $I subset.eq [n]$ tel que\
   $ sum_(i in I) a_i = S $
 ])
 
 #question(0)[
   Pour les suites suivante de $(a_n)$ et les valeurs de $N$ suivantes, indiquer si le problème est satisfiable ou non :
+]
   - $(a_n)_n = (1,2,4,8,16), N = 7$
   - $(a_n)_n = (31,24,2,43,12,12,18), N = 29$
   - $(a_n)_n = (1001,1010,101,100,11), N = 1111$
-]
+
 #question(1)[
-  Montrer que le problème est dans la classe NP
+  Montrer que #subsetsum est dans la classe NP.
 ]
 #question(2)[
-  Donner un algorithme qui en $O(n S)$ résoud le problème
+  Donner un algorithme qui résout #subsetsum en $cal(O)(n S)$.
 ]
 
 #correct([
 0. On a $7 = 4+2+1$ et $1111 = 1010+101$. Le deuxième n'est pas satifiable car tout les nombres $<N$ sont pair et que $N$ est impair.
-1. On donne la liste des indices, évidemment polynomiale car de longueur $<n$ et chaque élément est bornée par $n$. Vérifier si la somme égale à $S$ se fait en $O(n log S)$ (la somme de deux éléments plus petit que $S$ est en $log S$).
+1. On donne la liste des indices, évidemment polynomiale car de longueur $<n$ et chaque élément est bornée par $n$. Vérifier si la somme égale à $S$ se fait en $cal(O)(n log S)$ (la somme de deux éléments plus petit que $S$ est en $log S$).
 2. On le fait par programmation dynamique sur un tableau de booléens $T[i][j]$ de dimension $n times S$.
   On pose $T[i][k] = exists? I subset.eq {1,..,i}, sum a_i = k$
 
@@ -33,36 +38,37 @@ On considère le problème suivant :
 ])
 === NP-Complétude
 
-On cherche à prouver que le problème précédent est NP-Complet. Pour cela on considère une généralisation du problème sur des $k$-uplets : 
+On cherche à prouver que #subsetsum est NP-Complet. Pour cela on considère une généralisation du problème sur des $k$-uplets : 
 
-#problem([SUBSETSUM-VECT],[$k,n in NN$ et $a_1, a_2, ..., a_n, S in NN^k$],[
+#problem(subsetsumv,[$k,n in NN$ et $a_1, a_2, ..., a_n, S in NN^k$],[
   Est-ce qu'il existe $I subset.eq [n]$ tel que\
   $ sum_(i in I) a_i = S $
 ])
 
 #question(1)[
-  Montrer que le problème *SUBSETSUM-VECT* est NP
+  Montrer que le problème #subsetsumv est NP.
 ]
 
 #question(2)[
-  Montrer que on peut réduire le problème *SUBSETSUM-VECT* au problème *SUBSETSUM*
+  Montrer que on peut réduire le problème #subsetsumv au problème #subsetsum.
 ]
 
 #question(2)[
-  Montrer que *SUBSETSUM-VECT* est NP-Complet. On pourra poser $k$ le nombre de clauses d'une formule $phi$ sous forme normale conjonctive
+  Montrer que #subsetsumv est NP-Complet.
 ]
 
 #question(1)[
-  Vu que on a en question 2 un algorithme en $O(n S)$, est-ce que l'on peut en conclure que $"P" = "NP"$ ?
+  Est-ce que l'on peut en conclure que $"P" = "NP"$ grâce à la question 2 ?
 ]
 
 === Un problème analogue
 
-On introduit le problème suivant :
-#problem([SUBSUM-SPACE],$a_1, a_2, ..., a_n, k in NN$,[
+On introduit un problème analogue #subsetsums.
+
+#problem(subsetsums,$a_1, a_2, ..., a_n, k in NN$,[
   Est-ce qu'il existe $b_1,...,b_k in NN$ tel que\
   $ forall i <= n, a_i in { sum_(j=1)^k beta_j b_j | beta_1, ..., beta_k in {0,1} } $
 ])
 
-#question(1)[Montrer que le problème est NP]
-#question(4)[Montrer que le problème est NP-Complet]
+#question(1)[Montrer que #subsetsums est NP.]
+#question(4)[Montrer que #subsetsums est NP-Complet.]

@@ -1,8 +1,7 @@
 #import "../lib.typ": *
 #show heading: heading_fct
 
-#import "@preview/gloss-awe:0.0.5": gls
-#show figure.where(kind: "jkrb_glossary"): it => {it.body}
+
 
 _"A generating function is a clothesline on which we hang up a sequence of numbers for display."_
 #align(right, "- Herbert S. Wilf")
@@ -46,7 +45,7 @@ On note $1$ le type à un seul élément.
 
 === Classes combinatoires
 
-Une #gls(entry: "Classe combinatoire")[_classe combinatoire_] est un ensemble $cal(C)$ muni d'une fonction $"taille" = |dot| : cal(C) --> NN$ telle que pour tout $n in NN$, $"taille"^(-1)(n)$ est un ensemble fini.
+Une _classe combinatoire_ est un ensemble $cal(C)$ muni d'une fonction $"taille" = |dot| : cal(C) --> NN$ telle que pour tout $n in NN$, $"taille"^(-1)(n)$ est un ensemble fini.
 On la munit d'une suite $c_n := |"taille"^(-1)(n)|$ (lettre minuscule) et de la série formelle $C_n in CC((X))$ (lettre majuscule droite).
 
 On introduit les classes

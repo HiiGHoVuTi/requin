@@ -16,14 +16,12 @@ Un _quasi-bon-ordre_ est un ordre bien fondé tel qu'in n'existe pas de suite d'
 
 #question(0)[Montrer que la relation de divisibilité sur les entiers naturels non nuls est un ordre bien fondé mais n'est pas quasi-bon.]
 
-#question(1)[Montrer que les propriétés suivantes sont équivalentes :
+#question(1)[Montrer que les propriétés suivantes sont équivalentes :]
 - $subset.sq.eq$ est un quasi-bon-ordre
 - Pour $(x_n) in EE^NN$, il existe $i<j$ tels que $x_i subset.sq.eq x_j$
 - Toute suite de $EE$ admet une sous-suite croissante
-]
 
-#question(2)[Montrer que les conditions précédentes sont équivalentes à
-  - Pour $X subset.eq I$, il existe $Y subset.eq X$ fini tel que $forall x in X, exists y in Y, y subset.sq.eq x$.
+#question(2)[Montrer que les conditions précédentes sont équivalentes à : pour $X subset.eq I$, il existe $Y subset.eq X$ fini tel que $forall x in X, exists y in Y, y subset.sq.eq x$
 ]
 
 #question(2)[Monter que la relation de sous-mot sur $Sigma^star$ est un quasi-bon-ordre.]
@@ -80,7 +78,7 @@ On pose pour tout arbre enraciné avec au moins deux noeuds $e : EE^r -> (EE^r)^
 // NOTE(Juliette): c'est peut-être pas dur mais il faut que j'y réfléchisse
 #question(4)[En déduire le théorème de Kruskal.]
 
-=== Applications
+// === Applications
 
 // IDEA(Juliette): TREE(3) ?
 

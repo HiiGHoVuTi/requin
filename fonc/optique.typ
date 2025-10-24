@@ -1,8 +1,7 @@
 #import "../lib.typ": *
 #show heading: heading_fct
 
-#import "@preview/gloss-awe:0.0.5": gls
-#show figure.where(kind: "jkrb_glossary"): it => {it.body}
+
 
 #import "@preview/fletcher:0.5.1" as fletcher: diagram, node, edge
 
@@ -65,7 +64,7 @@ pour un certain `c` qui n'est pas fixé.
 
 _Dans cette partie, on s'éloigne un peu de `OCaml` pour avoir plus de liberté dans le types._
 
-Un constructeur de type $P$ à deux arguments est un _#gls(entry: "Profoncteur")[profoncteur]_ lorsqu'il existe $ p : (a' -> a) -> (b -> b') -> P a b -> P a' b' $
+Un constructeur de type $P$ à deux arguments est un _profoncteur_ lorsqu'il existe $ p : (a' -> a) -> (b -> b') -> P a b -> P a' b' $
 avec
 #align(center, grid(columns: (1fr, 1fr),
   [- $p "id" "id" = "id"$], [- $p (f' compose f) (g' compose g) = p f' g' compose p f g$]

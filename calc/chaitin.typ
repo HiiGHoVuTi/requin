@@ -87,11 +87,6 @@ On le munit de la sémantique suivante, comme action sur $ZZ times NN^ZZ$:
 
 #question(1)[Justifier que $mono("BF")$ est Turing-complet.]
 
-#correct[
-  La fonction `NAND` est une porte logique universelle. On peut donc réimplémenter un ordinateur en `BF`.
-  On n'attend pas une justification plus rigoureuse.
-]
-
 #question(2)[Proposer une surjection de $cal(P)$ dans $mono("BF")$.]
 
 #correct[

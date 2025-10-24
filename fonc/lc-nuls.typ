@@ -298,19 +298,19 @@ tel que $"D" space x space y$ représente le couple $(x,y)$
   Définir $"sub" in Lambda$ tel que $"sub" space C_n space C_m ->^* C_(max (n-m,0))$.
 ]
 
-==== Conditionnels
-// TODO: if_eq
+// ==== Conditionnels
+// // TODO: if_eq
 
-=== Points fixe et récursivité
+// === Points fixe et récursivité
 
-==== L'opérateur point-fixe
+// ==== L'opérateur point-fixe
 
-==== Récursivité
+// ==== Récursivité
 
-=== Typage Simple
+// === Typage Simple
 
-==== Types généraliste
+// ==== Types généraliste
 
-==== Terminaison
+// ==== Terminaison
 
-=== Système F et système T
+// === Système F et système T

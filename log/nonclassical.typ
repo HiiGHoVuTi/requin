@@ -1,7 +1,5 @@
 #import "../lib.typ": *
 #show heading: heading_fct
-#import "@preview/gloss-awe:0.0.5": gls
-#show figure.where(kind: "jkrb_glossary"): it => {it.body}
 
 On note $cal(V)$ l'ensemble des variables propositionnelles.
 
@@ -40,7 +38,7 @@ On revient aux propositions avec quantificateurs. Dans cette partie, on écrira 
 
 Un _cadre de Kripke_ est un graphe _orienté_ $cal(W)=(S_cal(W), A_cal(W))$.
 
-Un #gls(entry: "Modèle de Kripke")[_modèle de Kripke_] est un cadre de Kripke muni d'une fonction $h : cal(V) -> frak(P)(S_cal(W))$ telle que $ forall u v in A_cal(W), h(u) => h(v) $
+Un _modèle de Kripke_ est un cadre de Kripke muni d'une fonction $h : cal(V) -> frak(P)(S_cal(W))$ telle que $ forall u v in A_cal(W), h(u) => h(v) $
 
 #question(0)[Montrer que $h$ définit pour chaque $P in cal(V)$ une partition $S_cal(W) =: cal(W)(P) union.sq cal(W)(not P)$.]
 
@@ -51,10 +49,10 @@ $ forall P in cal(V), w models_h P "si" w in cal(W)(P)
 \ forall phi, psi, w models_h phi or psi "si" w models_h phi "ou" w models_h psi
 \ forall phi, w models_h diamond phi "si il existe" w v in A_cal(W) "avec" v models_h phi
 \ forall phi, w models_h square phi "si pour tout" w v in A_cal(W) "on a" v models_h phi
+\ forall phi, psi, w models_h square phi => psi "si pour tout" w v in A_cal(W) "on a" w models_h phi "entraîne" v models_h psi
 $
 
-#question(1)[Donner une définition cohérente pour $w models_h phi => psi$.]
-#question(0)[En déduire une condition nécessaire pour $w models_h bot$.]
+#question(0)[Donner une condition nécessaire pour $w models_h bot$.]
 
 On note $models_h phi$ lorsque $forall w, w models_h phi$. On note $cal(W) models phi$ lorsque $models_h phi$ pour tout $h$.
 On dira que $phi$ est Kripke-valide lorsque $cal(W) models phi$ pour tout modèle $cal(W)$, noté $models phi$.
@@ -90,6 +88,7 @@ On ne suppose plus rien sur la relation $A_cal(W)$ que l'on notera $tilde$ déso
 
 #question(1)[Donner une formule paramétrée $F$ telle que $tilde$ est antisymétrique si et seulement si $forall phi, cal(W) models F (phi)$.]
 
+\
 #question(2)[Montrer que $~$ est transitive si et seulement si $ forall phi, cal(W) models (square phi => square square phi) or (diamond diamond phi => diamond phi) $]
 
 // NOTE(Juliette): si ça aide à faire la question requinesque du théorème de complétude, le déplacer ci-dessus

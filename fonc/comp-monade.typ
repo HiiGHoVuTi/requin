@@ -1,8 +1,7 @@
 #import "../lib.typ": *
 #show heading: heading_fct
 
-#import "@preview/gloss-awe:0.0.5": gls
-#show figure.where(kind: "jkrb_glossary"): it => {it.body}
+
 
 _Dans ce problème, on utilisera du pseudocode fonctionnel ou le langage `OCaml`._
 
@@ -27,7 +26,7 @@ On notera `.` l'opérateur de composition $compose$ et `id` la fonction identit�
   ```
 ]
 
-Un #gls(entry: "Foncteur")[_foncteur_] $F$ est un type paramétré (comme `option` ou `cell`) muni d'une fonction `fmap : ('a -> 'b) -> 'a F -> 'b F` respectant les lois
+Un _foncteur_ $F$ est un type paramétré (comme `option` ou `cell`) muni d'une fonction `fmap : ('a -> 'b) -> 'a F -> 'b F` respectant les lois
 #align(center, grid(columns: (1fr, 1fr),
 [- `fmap g . fmap f = fmap (g . f)`],
 [- `fmap id = id`]
@@ -182,7 +181,7 @@ join . join = join . (fmap join)
   ```
 ]
 
-#question(1)[Justifier la qualification de "#gls(entry: "Monoïde")[monoïde]" pour $M$.]
+#question(1)[Justifier la qualification de "monoïde" pour $M$.]
 
 #correct[
   - `pure` représente l'élément neutre
@@ -249,7 +248,7 @@ On pose pour $F$ un foncteur fixé `type `$F$`_fix = { fix: (* pour tout *) 'a. 
 
 #import "@preview/fletcher:0.5.1" as fletcher: diagram, node, edge
 
-Une #gls(entry: "Transformation naturelle")[_transformation naturelle_] $alpha$ entre un foncteur $F$ et un foncteur $G$ est une famille de fonctions telles que pour $x,y$ des types et $h : x -> y$, le diagramme suivant commute
+Une _transformation naturelle_ $alpha$ entre un foncteur $F$ et un foncteur $G$ est une famille de fonctions telles que pour $x,y$ des types et $h : x -> y$, le diagramme suivant commute
 
 #align(center, diagram(
   node((0, 0), $F(x)$),

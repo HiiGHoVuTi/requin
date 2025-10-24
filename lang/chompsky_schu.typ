@@ -43,15 +43,15 @@ Un langage $L$ est hors-contexte si et seulement il existe un langage régulier 
 ]
 
 
-On dit qu'une grammaire est sous _forme normale de Chompsy_ si toutes les règles sont de la forme $X -> Y Z$ ou $X -> alpha$ avec $Y,Z in Gamma$ et $alpha in Sigma$. 
+On dit qu'une grammaire est sous _forme normale de Chomsky_ si toutes les règles sont de la forme $X -> Y Z$ ou $X -> alpha$ avec $Y,Z in Gamma$ et $alpha in Sigma$. 
 
 
 #question(3)[
-  Montrer que toute grammaire ne reconnaisant pas $epsilon$ peut etre mise sous forme normale de Chompsy.
+  Montrer que toute grammaire ne reconnaisant pas $epsilon$ peut etre mise sous forme normale de Chomsky.
 ]
 
 
-Soit $G = (Sigma, Gamma, S, R)$ une grammaire hors-contexte sous forme normale de chompsy. On ordonne les $k := |R|$ règles $r_1,...,r_k$. On pose $G' = (Sigma', Gamma', S, R')$ avec :
+Soit $G = (Sigma, Gamma, S, R)$ une grammaire hors-contexte sous forme normale de Chomsky. On ordonne les $k := |R|$ règles $r_1,...,r_k$. On pose $G' = (Sigma', Gamma', S, R')$ avec :
 $ Sigma' = Sigma union {overline(alpha) : alpha in Sigma} union union.big_(i in [k]) { a_i, overline(a_i), b_i, overline(b_i), c_i, overline(c_i) } $
 
 Et les règles $R'$ sont : 

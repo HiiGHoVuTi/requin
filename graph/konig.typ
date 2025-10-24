@@ -181,7 +181,7 @@ Soit $E = {X_n}$ un ensemble dénombrable d'ensembles finis non-vides. On pose $
 _Mais quid des arbres non-dénombrables ? à faire si vous n'avez pas peur des ordinaux._
 
 On considère désormais les arbres comme des ensembles partiellement ordonnés d'ordinaux.
-Si $kappa$ est un cardinal, un _$kappa$-arbre d'Aronszajn_ est un arbre de cardinal $kappa$ dont toutes les branches sont de hauteur inférieure à $kappa$ et dont tous les niveaux sont de cardinal inférieur à $kappa$.
+Si $kappa$ est un cardinal, un _$kappa$-arbre d'Aronszajn_ est un arbre de hauteur $kappa$ dont toutes les branches sont de hauteur inférieure à $kappa$ et dont tous les niveaux sont de cardinal inférieur à $kappa$.
 
 #question(0)[Montrer qu'il n'existe pas d'$alef_0$-arbre d'Aronszajn.]
 
