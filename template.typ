@@ -1,9 +1,5 @@
-
-#import "@preview/jogs:0.2.3": *
-
-#let code = ```
-function toRepublicanCalendar(year, month, day) {
-  const months = [
+#let toRepublicanCalendar(year, month, day) = {
+  let months = (
     "Vendémiaire",
     "Brumaire",
     "Frimaire",
@@ -17,89 +13,92 @@ function toRepublicanCalendar(year, month, day) {
     "Thermidor",
     "Fructidor",
     "Sansculottides",
-  ];
-
-  function isLeapYear(year) {
+  )
+  let isLeapYear = year => {
+    let mod = calc.rem
     return (
-      year % 4 === 0 &&
-      (year % 100 !== 0 || year % 400 === 0) &&
-      year % 4000 !== 0
-    );
+      mod(year, 4) == 0
+        and (mod(year, 100) != 0 or mod(year, 400) == 0)
+        and mod(year, 4000) != 0
+    )
   }
 
-  function toRepublicanCalendar(year, month, day) {
-    let startYear = year;
-    if (month < 9 || (month === 9 && day < 22)) {
-      startYear--;
-    }
+  let startYear = if month < 9 or (month == 9 and day < 22) { year - 1 } else {
+    year
+  }
+  let dayOfYear = int((
+    datetime(year: year, month: month, day: day)
+      - datetime(year: startYear, month: 9, day: 22)
+  ).days())
+  let isLeapStartYear = isLeapYear(startYear)
+  let daysInYear = if isLeapStartYear { 366 } else { 365 }
 
-    const startRepublican = new Date(startYear, 8, 22);
-    const currentDate = new Date(year, month - 1, day);
-    let dayOfYear = Math.floor(
-      (currentDate - startRepublican) / (24 * 60 * 60 * 1000)
-    );
+  if dayOfYear >= daysInYear - 5 {
+    let sansculottidesDay = dayOfYear - (daysInYear - 6)
+    return (
+      day: sansculottidesDay,
+      month: "Sansculottides",
+      year: startYear - 1791,
+    )
+  }
 
-    const daysInYear = isLeapYear(startYear) ? 366 : 365;
-    if (dayOfYear >= daysInYear - 5) {
-      const sansculottidesDay = dayOfYear - (daysInYear - 6);
-      return {
-        day: sansculottidesDay,
+  if isLeapStartYear {
+    if dayOfYear >= 365 {
+      return (
+        day: dayOfYear - 364,
         month: "Sansculottides",
         year: startYear - 1791,
-      };
+      )
     }
-
-    if (isLeapYear(startYear)) {
-      if (dayOfYear >= 365) {
-        return {
-          day: dayOfYear - 364,
-          month: "Sansculottides",
-          year: startYear - 1791,
-        };
-      }
-      dayOfYear++;
-    } else {
-      if (dayOfYear >= 364) {
-        return {
-          day: dayOfYear - 363,
-          month: "Sansculottides",
-          year: startYear - 1791,
-        };
-      }
-    }
-
-    const republicanMonth = Math.floor(dayOfYear / 30);
-    const republicanDay = (dayOfYear % 30) + 1;
-    return {
-      day: republicanDay,
-      month: months[republicanMonth],
+    dayOfYear += 1
+  } else if dayOfYear >= 364 {
+    return (
+      day: dayOfYear - 363,
+      month: "Sansculottides",
       year: startYear - 1791,
-    };
+    )
   }
-  return toRepublicanCalendar(year, month, day);
+
+  let republicanMonth = calc.quo(dayOfYear, 30)
+  let republicanDay = calc.rem(dayOfYear, 30) + 1
+  return (
+    day: republicanDay,
+    month: months.at(republicanMonth),
+    year: startYear - 1791,
+  )
 }
 
-function format(y, m, d){
-  const {year, month, day} = toRepublicanCalendar(y, m, d);
-  return `version du ${day} ${month}, an ${year}`;
+#let formatToRepublicanDate(y, m, d) = {
+  let d = toRepublicanCalendar(y, m, d)
+  return "version du " + str(d.day) + " " + str(d.month) + ", an " + str(d.year)
 }
 
-function romanise (num) {
-    if (isNaN(num))
-        return NaN;
-    var digits = String(+num).split(""),
-        key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
-               "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
-               "","I","II","III","IV","V","VI","VII","VIII","IX"],
-        roman = "",
-        i = 3;
-    while (i--)
-        roman = (key[+digits.pop() + (i * 10)] || "") + roman;
-    return Array(+digits.join("") + 1).join("M") + roman;
+#let romanise(num) = {
+  let roman-map = (
+    (1000, "M"),
+    (900, "CM"),
+    (500, "D"),
+    (400, "CD"),
+    (100, "C"),
+    (90, "XC"),
+    (50, "L"),
+    (40, "XL"),
+    (10, "X"),
+    (9, "IX"),
+    (5, "V"),
+    (4, "IV"),
+    (1, "I"),
+  )
+  let result = ""
+  let remainder = num
+  for (value, symbol) in roman-map {
+    while remainder >= value {
+      result += symbol
+      remainder -= value
+    }
+  }
+  result
 }
-```
-
-#let bytecode = compile-js(code)
 
 #let pset(class: "6.100",
   title: "PSET 0",
@@ -109,9 +108,7 @@ function romanise (num) {
   collaborators: (),
   doc
 ) = {[
-
-
-#let dateRev = call-js-function(bytecode, "format", date.year(), date.month(), date.day())
+#let dateRev = formatToRepublicanDate(date.year(), date.month(), date.day())
 
 /* Convert collaborators to a string if necessary */
 #let collaborators=if type(collaborators) == array {collaborators.join(", ")} else {collaborators}
@@ -119,7 +116,7 @@ function romanise (num) {
 /* Problem + subproblem headings */
 #set heading(numbering: (..nums) => {
     nums = nums.pos()
-    let roman = call-js-function(bytecode, "romanise", nums.at(0))
+    let roman = romanise(nums.at(0))
     if nums.len() == 1 {
       [ Chapitre #roman.
       ]
