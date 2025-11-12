@@ -4,11 +4,13 @@
 #let AUTHORS_DOC = ("Coda","Juliette")
 #let AUTHORS = "Coda & Juliette"
 
-#let q_count = counter("questions")
-#let is_wip = state("wip",false)
-
 #let input = sys.inputs.at("corrige",default:"false");
 #let show_correct = input=="true";
+
+#let q_count = counter("questions")
+#let is_wip = state("wip",false)
+#let is_correct = state("corr",show_correct)
+
 
 #let levels_emojis = (
   "emojis/chick.svg",
@@ -27,8 +29,8 @@
   #linebreak()
 ]
 // Corrections
-#let correct(content) = {
-  if (show_correct) {
+#let correct(content) = context {
+  if (is_correct.get()) {
     let color = green.darken(50%);
     rect(width: 100%,stroke: color)[#text(color)[*Correction* #content]]
   }
@@ -100,7 +102,7 @@
 }
 
 #let set_wip(x) = {state("wip").update(b => true); x};
-
+#let set_correct(x:true) = {state("corr").update(b => true)}
 // main template
 #let template(body,is_main:false,set_heading:true) = {
   let correct_field = sys.inputs.at("correct",default:"false");
