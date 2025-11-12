@@ -26,7 +26,7 @@ On dit que deux rayons $r_1,r_2$ sont équivalents s'il existe un troisième ray
 ]
 #correct[
   On vérifie les axiomes :
-  - *Réflexivité* On a que $r_1 tilde r_1$ car en posant $r_3 := r_1$ on a bien ${r_i : i in NN} sect {r_i : i in NN}$ infini
+  - *Réflexivité* On a que $r_1 tilde r_1$ car en posant $r_3 := r_1$ on a bien ${r_i : i in NN} inter {r_i : i in NN}$ infini
   - *Symmétrie* Si $r_1 tilde r_2$, alors il existe $r_3$ rencontrant $r_1$ et $r_2$ sur une infinité de sommets. Et comme c'est le cas, $r_2 tilde r_1$.
   - *Transitivité* Supposons $r_1 tilde r_2$ et $r_2 tilde r_3$. On choisi $r'$ (resp. $r''$) qui rencontre une infinité de fois $r_1$ et $r_2$ (resp. $r_2$ et $r_3$). On constuit par récurrence un chemin qui va concaténer des bouts des autres chemin ensemble avec une idée d'aller-viens :
   - On commence sur $r_1$ jusqu'au prochain indice en commun avec $r'$

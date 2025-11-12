@@ -244,7 +244,7 @@ Enfin, une suite $u in Sigma^NN$ est _calculablement aléatoire_ si aucune super
 #question(1)[Donner une famille infinie de supermartingales constructives.]
 
 #correct[
-  $square$ Soit $p in QQ sect med ]-1,1[$. On pose $F_p (epsilon) := 1$ puis $ forall u in Sigma^star, F_p (1u) := (1+p) F_p (u) "et" F_p (0u) := (1 - p) F_p (u) $
+  $square$ Soit $p in QQ inter med ]-1,1[$. On pose $F_p (epsilon) := 1$ puis $ forall u in Sigma^star, F_p (1u) := (1+p) F_p (u) "et" F_p (0u) := (1 - p) F_p (u) $
   On vérifie sans problème que $F_p$ est une (super)martingale constructive. #h(1fr) $square$
 
   De plus, il suffit de regarder l'image de $1$ pour constater que $p arrow.bar F_p$ est injective.

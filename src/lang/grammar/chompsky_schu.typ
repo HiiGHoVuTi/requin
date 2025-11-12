@@ -37,11 +37,11 @@ $ forall u v in Sigma^*, phi(u v) = phi(u) phi(v) $
 
 On s'intéresse à montrer le théorème suivant :
 #theo(title:[de Chomsky-Schützenberger])[
-Un langage $L$ est hors-contexte si et seulement il existe un langage régulier $K$, un langage de Dyck $D_n$ et un morphisme de mot $phi$ tels que $L = phi(D_n sect K)$.
+Un langage $L$ est hors-contexte si et seulement il existe un langage régulier $K$, un langage de Dyck $D_n$ et un morphisme de mot $phi$ tels que $L = phi(D_n inter K)$.
 ]
 
 #question(2)[
-  Montrer que l'intersection d'un langage réguleir et d'un langage hors-contexte est hors-contexte. En déduire un sens du théorème.
+  Montrer que l'intersection d'un langage régulier et d'un langage hors-contexte est hors-contexte. En déduire un sens du théorème.
 ]
 
 
@@ -66,5 +66,5 @@ Et les règles $R'$ sont :
 ]
 
 #question(2)[
-  Proposer un langage régulier $K$ tel que $K sect D_n = L(G)$. Conclure la preuve du théorème.
+  Proposer un langage régulier $K$ tel que $K inter D_n = L(G)$. Conclure la preuve du théorème.
 ]

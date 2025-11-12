@@ -61,7 +61,7 @@ On note ensuite $H := G[S^dagger]$ et $overline(H) := overline(G)[S^dagger]$.
   Pour qu'un croisement existe, il faut que deux arêtes existent, donc que les quatre sommets existent
   $ EE["cr"(overline(H))] 
     &= sum_({u v}, {w x} "se croisent") PP({u v} "existe" "et" {w x} "existe") \
-    &= sum_({u v}, {w x} "se croisent") PP({u in S^dagger} sect {v in S^dagger} sect {w in S^dagger} sect {x in S^dagger}) \
+    &= sum_({u v}, {w x} "se croisent") PP({u in S^dagger} inter {v in S^dagger} inter {w in S^dagger} inter {x in S^dagger}) \
     &= p^4 "cr"(overline(G)) "car" u,v,w,x "sont distincts"
   $
 
@@ -101,7 +101,7 @@ Soit $M in cal(M)_n (NN)$ telle que tout $k in [|1, n|]$ apparaît exactement $n
 Soit $bold(a) in CC^10$. On dira que $bold(p) in CC^10$
 #grid(columns: (1fr, 2fr, 3fr), [],
 [- _couvre_ $bold(a)$ si $ bold(a) subset union.big_(x in bold(p)) overline(cal(B))(x, 1) $],
-[- est _sans superposition_ si $ forall x,y in bold(p), x != y => overline(cal(B))(x, 1) sect overline(cal(B))(y, 1) = emptyset $]
+[- est _sans superposition_ si $ forall x,y in bold(p), x != y => overline(cal(B))(x, 1) inter overline(cal(B))(y, 1) = emptyset $]
 )
 #question(4)[
   Montrer qu'il existe $bold(p) in CC^10$ couvrant $bold(a)$ sans superposition.

@@ -134,7 +134,7 @@ On pose enfin $cal(L)^exists_phi := { u in Sigma^omega : exists alpha, u[alpha] 
 
 #question(1)[Donner une formule $phi$ vraie si et seulement si $q in cal(V)$ apparaît une infinité de fois.]
 
-#question(2)[Donner une formule $phi$ vraie sur $w$ si et seulement si $forall n in NN, lr(abs(w_n sect cal(E)), size: #125%) = 1$.]
+#question(2)[Donner une formule $phi$ vraie sur $w$ si et seulement si $forall n in NN, lr(abs(w_n inter cal(E)), size: #125%) = 1$.]
 
 #question(3)[Montrer que les automates de Büchi et les formules avec quantification existentielle sont équivalents.]
 

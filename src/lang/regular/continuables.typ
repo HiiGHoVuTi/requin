@@ -72,7 +72,7 @@ Un langage $L$ est dit _continuable_ si pour tout $u in Sigma^*$, il existe un $
 
   Soit $(Q, Sigma, delta, q_0, F)$ un automate fini déterministe complet qui reconnaît $L$. Posons $k = min {|delta(Q,w)| : w in Sigma^*}$ et définissons $K = {w in Sigma^* : |delta(Q,w)| = k}$.
   
-  Une fois le langage $K$ atteint, on en reste captif : $K Sigma^* subset.eq K$. Comme $L$ est continuable et non vide, $K$ l’intersecte. Choisissons $u in K sect L$ et posons $Q_u = delta(Q,u)$.
+  Une fois le langage $K$ atteint, on en reste captif : $K Sigma^* subset.eq K$. Comme $L$ est continuable et non vide, $K$ l’intersecte. Choisissons $u in K inter L$ et posons $Q_u = delta(Q,u)$.
   
   Par construction $delta(Q_u,u) = Q_u$ car $delta(Q_u,u) = delta(Q_u,u^2) subset.eq Q_u$ et $|Q_u| = k$. L’application $q |-> delta(q,u)$ est donc une permutation de $Q_u$. Ce dernier étant fini, il existe $n>0$ tel que $q |-> delta(q,u^n)$ est l’identité sur $Q_u$.
   
