@@ -1,18 +1,34 @@
-#import "template.typ": pset
-#import "lib.typ": *
+#import "src/to_republicain.typ": *
+#import "src/lib.typ": *
 
 
-#show: pset.with(
-  title: "REQUIN",
-  author: "Coda & Juliette",
-  date: datetime.today(),
-  // collaborators: ("Ben Bitdiddle", "Louis Reasoner")
-)
+// the template but the without ornements
+#show :it => template(it,is_main:true,set_heading:false)
 
-#import "@preview/codly:1.0.0": *
-#show: codly-init.with()
+#set heading(numbering: (..nums) => {
+  nums = nums.pos()
+  let roman = romanise(nums.at(0))
+  if nums.len() == 1 {
+    [ Chapitre #roman.
+    ]
+  } else if nums.len() == 2 {
+    [Problème #roman.#nums.at(1):]
+  } 
+  else {
+    numbering("I.1.a.i", ..(..nums).slice(2))
+  }
+})
 
-// -------------------- PREMIERE PAGE --------------------
+/* Make the title */
+#align(center, {
+  text(size: 1.6em, weight: "bold")[REQUIN \ ]
+  text(size: 1.2em, weight: "semibold")[Coda & Juliette \ ]
+  emph[
+    #todayDate
+  ]
+  box(line(length: 100%, stroke: 1pt))
+})
+
 #v(1fr)
 #align(center)[
   #text(size: 30pt)[REQUIN]
@@ -42,18 +58,19 @@
 // *Notation de cet ouvrage*
 *Notations*
 
-#figure(block(width: 90%,
-  table(columns: (1fr, 5fr), inset: 7pt,
+#figure(block(width: 95%,
+  table(columns: (80pt, 1fr), inset: 7pt,
     $x := a$, [Définition de $x$ comme $a$],
     $NN, ZZ, QQ, RR$, [Respectivement les entiers naturels, relatifs, nombres rationnels et réels],
-    $[n]$, [L'ensemble des entiers naturels de $1$ à $n$],
-    $frak(P)(A)$, [L'ensemble des parties de $A$],
-    $frak(P)_f (A)$, [L'ensemble des parties finies de $A$],
-    $binom(A, k)$, [L'ensemble des $k$-uplets d'éléments de $A$],
+    $[n]$, [L'ensemble des entiers naturels de $1$ à $n$. On a $[n] := {1,2,...,n}$],
+    [$frak(P)(A)$, $cal(P)(A)$], [L'ensemble des parties de $A$],
+    [$frak(P)_f (A)$, $cal(P)_f (A)$], [L'ensemble des parties finies de $A$],
+    $A^k$, [L'ensemble des $k$-uplets d'éléments de $A$],
+    $binom(A, k)$, [L'ensemble des parties à $k$ éléments de $A$],
     $A^B$, [L'ensemble des fonctions de $B$ dans $A$],
-    $A union.sq B$, [L'union disjointe de $A$ et $B$, présuppose $A sect B = emptyset$],
+    $A union.sq B$, [L'union disjointe de $A$ et $B$, présuppose $A inter B = emptyset$],
     $T[i]$, [Le $i$#super("ème") élément du tableau $T$],
-    $G = (S,A)$, [$G$ est un graphe avec les sommets $S$ et les arêtes $A subset.eq binom(S, 2)$],
+    $G = (S,A)$, [$G$ est un graphe non orienté avec les sommets $S$ et les arêtes $A subset.eq binom(S, 2)$],
     $K_n$, [Le graphe complet à $n$ sommets],
     $K_(n,m)$, [Le graphe biparti complet sur $n+m$ sommets],
     $G[S']$, [Le sous-graphe induit par l'ensemble de sommets $S'$ de $G$],
@@ -72,129 +89,41 @@ Voir le glossaire pour les définitions.
   v(12pt, weak: true)
   strong(it)
 }
+#show outline.entry.where(
+  level: 2
+): it => context {
+  if is_wip.at(it.element.location()) {
+    let body = it.body() + text(red)[ (WIP)]
+    link(
+      it.element.location(),
+      it.indented(
+        it.prefix(),
+        body + sym.space + box(width: 1fr, it.fill) + sym.space + sym.wj + it.page()
+      )
+    )
+  } else [ #it  ]
+}
+
 #outline(title: "Sommaire", depth: 2, indent: 10pt)
 
-// setup heading to the custom one
-#show heading: heading_fct
+// now enable the real template
+#show :template
+
+// And include everything! 
+#include "src/all.typ"
 
 
-= Algorithmique
-== KMP
-#include "algo/kmp.typ"
-== Tableaux Autoréférents
-#include "algo/autoref.typ"
-== Problème Subsetsum 
-#include "algo/subsetsum.typ"
-== Fenêtre glissante
-#include "algo/window.typ"
-== Approximation dans les graphes
-#include "algo/aprox.typ"
-== Théorème de Cook-Levin
-#include "algo/cook.typ"
-
-= Arbres & Graphes
-== Mots univers
-#include "graph/univers.typ"
-== Graphes $k$-réguliers et couplages
-#include "graph/k_regular.typ"
-== Bipartition induite
-#include "graph/bipartition.typ"
-== Coloration d'aretes
-#include "graph/col_arr.typ"
-== Couplages
-#include "graph/couplages.typ"
-== Théorème de Turán
-#include "graph/turan.typ"
-== Arbres croissants
-#include "graph/croissant.typ"
-== Lemme de König
-#include "graph/konig.typ"
-== Morphisme de Graphes
-#include "graph/morph.typ"
-== Graphes Infinis
-#include "graph/infini.typ"
-== Théorème de Kruskal
-#include "graph/kruskal-tree.typ"
-== Calcul différentiel extérieur en montagne
-#include "graph/ext-calc.typ"
-
-= Langages formels
-== Language permuté et inclusions
-#include "lang/inclusions.typ"
-== Automates d'arbres
-#include "lang/auto_arbre.typ"
-== Language continuables
-#include "lang/continuables.typ"
-== Puissance et racine de languages
-#include "lang/pow_sqrt.typ"
-== Théorème de Chomsky-Schützenberger
-#include "lang/chompsky_schu.typ"
-== Monoïde syntaxique
-#include "lang/mon-syn.typ"
-== Dangling else
-#include "lang/dangling.typ"
-
-
-= Théorie des jeux
-== Nim à choix
-#include "jeux/nim_set.typ"
-== ChipLiar Game
-#include "jeux/chip-liar.typ"
-== ChipFiring Game
-#include "jeux/chip-firing.typ"
-
-= Calculabilité
-== Calculabilité et représentation d'ensembles infinis
-#include "calc/ens_fct.typ"
-== Oméga de Chaitin
-#include "calc/chaitin.typ"
-== Espaces vectoriels calculables
-#include "calc/ev.typ"
-
-= Logique
-== Compacité
-#include "log/compacite.typ"
-// == SAT et typage
-// #include "log/sat-types.typ"
-== Modèles non-classiques
-#include "log/nonclassical.typ"
-== Logique temporelle
-#include "log/temporal.typ"
-
-= Langages fonctionnels
-== Lambda calcul pour les nuls
-#include "fonc/lc-nuls.typ"
-== Composition monadique
-#include "fonc/comp-monade.typ"
-// == Optique des données
-// #include "fonc/optique.typ"
-== Calculs paresseux
-#include "fonc/paresse.typ"
-
-= Mathématiques pour l'informatique
-== Monoïdes libres, langages et actions
-#include "math/semigroupes-et-langages.typ"
-== Monoïdes et relations de Green
-#include "math/green.typ"
-== Méthode probabiliste <meth-proba>
-#include "math/methode-probabiliste.typ"
-== Théorème du point fixe de Lawvere
-#include "math/lawvere.typ"
-== Séries génératrices et formelles
-#include "math/series.typ"
-== Récurrence bien fondée
-#include "math/well_founded.typ"
-== Ordinaux
-#include "math/ordinaux.typ"
-
-
+// Glossary doesn't work :c
+/*
 = Glossaire
 
 #import "@preview/gloss-awe:0.0.5": *
-#import "./glossary-pool.typ": glossary-pool
-
+#import "src/glossary-pool.typ": glossary-pool
 #pagebreak()
 #set text(font: ("Arial", "Trebuchet MS"), size: 8pt)
 #columns(2)[
     #make-glossary(glossary-pool)
 ]
+
+
+*/
