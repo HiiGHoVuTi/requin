@@ -11,6 +11,7 @@
 #let is_wip = state("wip",false)
 #let is_correct = state("corr",show_correct)
 
+#let sc = smallcaps
 
 #let levels_emojis = (
   "emojis/chick.svg",

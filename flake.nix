@@ -11,6 +11,11 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
+    typst = {
+      url = "github:typst/typst/v0.13.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Example of downloading icons from a non-flake source
     # font-awesome = {
     #   url = "github:FortAwesome/Font-Awesome";
@@ -22,6 +27,7 @@
     nixpkgs,
     typix,
     flake-utils,
+    typst,
     ...
   }:
     flake-utils.lib.eachDefaultSystem (system: let
@@ -29,6 +35,7 @@
       inherit (pkgs) lib;
 
       typixLib = typix.lib.${system};
+      typstPackage = typst.packages.${system}.default;
 
       src = typixLib.cleanTypstSource ./.;
       commonArgs = {
@@ -52,14 +59,14 @@
       # to the current directory
       build-drv = typixLib.buildTypstProject (commonArgs
         // {
-          inherit src;
+          inherit src typstPackage;
         });
 
       # Compile a Typst project, and then copy the result
       # to the current directory
       build-script = typixLib.buildTypstProjectLocal (commonArgs
         // {
-          inherit src;
+          inherit src typstPackage;
         });
 
       # Watch a project and recompile on changes
@@ -81,17 +88,12 @@
         };
       };
 
-      devShells.default = typixLib.devShell {
-        inherit (commonArgs) fontPaths virtualPaths;
+      devShells.default = pkgs.mkShell {
         packages = [
-          # WARNING: Don't run `typst-build` directly, instead use `nix run .#build`
-          # See https://github.com/loqusion/typix/issues/2
-          # build-script
           watch-script
-          # More packages can be added here, like typstfmt
-          pkgs.typst-lsp
-          pkgs.typstfmt
+          typstPackage
         ];
+        TYPST_FONT_PATHS = lib.strings.makeSearchPathOutput "fonts" "share/fonts" commonArgs.fontPaths;
       };
     });
 }

@@ -4,7 +4,7 @@
 #import "@preview/gloss-awe:0.0.5": gls
 #show figure.where(kind: "jkrb_glossary"): it => {it.body}
 
-#import "@preview/cetz:0.2.2"
+#import "@preview/cetz:0.3.0"
 
 == La méthode probabiliste
 

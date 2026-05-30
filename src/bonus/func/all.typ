@@ -4,6 +4,7 @@
 
 = Langages fonctionnels
 #include "comp-monade.typ"
+#include "lambda_ref.typ"
 
 #show: set_wip
 #include "lc-nuls.typ"

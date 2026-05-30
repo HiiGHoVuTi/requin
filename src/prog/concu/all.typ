@@ -3,5 +3,5 @@
 
 = Concurrence
 
-Section WIP.
+#include "structures.typ"
 #show :set_wip

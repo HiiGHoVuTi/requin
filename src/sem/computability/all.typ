@@ -6,6 +6,6 @@
 #include "0_qdc.typ"
 #include "ens_fct.typ"
 #include "chaitin.typ"
-
-#show :set_wip
+#include "presburger.typ"
 #include "ev.typ"
+#include "topologie.typ"

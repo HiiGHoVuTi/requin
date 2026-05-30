@@ -68,7 +68,7 @@ On suppose désormais $ sum_(i=0)^k binom(r, i) > 2^r/n $
 
 #correct[
   De la question précédente et de l'hypothèse on déduit directement que si $suit.diamond$ joue au hasard, $EE("nombre de jetons") > 1$.
-  Par le lemme décrit dans @meth-proba[] il existe une suite de décisions qui mène à une victoire de $suit.diamond$.
+  Par le lemme de la méthode probabiliste /* TODO: ajouter ref */ il existe une suite de décisions qui mène à une victoire de $suit.diamond$.
 
   On note que le "peu importe comment $suit.club$ joue" n'amène aucune imprécision au raisonnement. On aurait pu supposer par l'absurde que $suit.club$ avait une stratégie gagnante et affronter celle-ci.
 ]

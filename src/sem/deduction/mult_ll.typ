@@ -1,8 +1,13 @@
 #import "../../lib.typ": *
 #import "@preview/curryst:0.5.1": rule, prooftree
+#import "@preview/fletcher:0.5.6" as fletcher: diagram, node, edge
 #show :template
 
+#let par = $med amp.inv med$
+
 //#set_correct()
+
+#let tensor = $times.circle$
 
 == Introduction à la logique linéaire multiplicative
 
@@ -94,3 +99,55 @@ $
 (tack Gamma, F #h(15pt) tack Delta, F^bot)/(tack Gamma, Delta ) "cut"
 $
 Et avec ça, on a montré le théorème bien compliqué que s'il existe une preuve utillisant la règle cut, il existe une sans.
+
+Un _réseau de preuve_ est un graphe orienté avec arêtes pendantes obtenu à partir des opérations suivantes (si $cal(A)$ est une variable, on la voit comme un graphe à un sommet et sans arête) :
+#align(center, grid(columns: (2fr, 1fr),
+[
+- $"ax"(X)$ : deux arêtes pendantes orientées vers $X$ et $overline(X)$
+- $"cut"(X)$ : deux arêtes pendantes orientées depuis $X$ et $overline(X)$
+- $cal(A) tensor cal(B)$ : deux arêtes orientées depuis $cal(A)$ et $cal(B)$ vers $cal(A) tensor cal(B)$
+- $cal(A) par cal(B)$ : deux arêtes orientées depuis $cal(A)$ et $cal(B)$ vers $cal(A) par cal(B)$
+],
+[
+#figure(scale(diagram(node-fill: none,
+  node((0, 0), $X$),
+  node((1, 0), $overline(X)$),
+  node((3/2, -1/3), $Y$),
+  node((2, 0), $Z$),
+  node((5/2, 0), $overline(Z)$),
+  node((1/2, 1/2), $par$),
+  node((3/2, 1/2), $par$),
+  edge((1/2,-1/2), (0, 0), "->"),
+  edge((1/2,-1/2), (1, 0), "->"),
+  edge((9/4,-1/2), (2, 0), "->"),
+  edge((9/4,-1/2), (5/2, 0), "->"),
+  edge((9/4,1/2), (2, 0), "<-"),
+  edge((9/4,1/2), (5/2, 0), "<-"),
+  edge((0,0), (1/2,1/2), "->"),
+  edge((1,0), (1/2,1/2), "->"),
+  edge((3/2, 1/2), (1/2, 1/2), "<-"),
+  edge((3/2, 1/2), (3/2, -1/3), "<-"),
+), 80%), caption: [Réseau $R_0$]) <r0>
+]))
+
+Une prémisse (_resp._ conclusion) d'un réseau est un sommet de degré entrant (_resp._ sortant) nul.
+
+#q(1)[Quelles sont les prémisses et les conclusions du réseau $R_0$ (@r0) ?]
+
+#q(2)[Expliquer comment fonctionne l'_élimination des coupures_ dans des réseaux de preuve.]
+
+#q(2)[Donner un réseau de preuve pour le séquent de la question 0. Le comparer à l'arbre de preuve.]
+
+#q(2)[Donner un réseau de preuve dont le séquent associé n'est pas démontrable.]
+
+Un _interrupteur_ d'un réseau est un choix pour chaque $cal(A) par cal(B)$ d'une seule des deux arêtes entrantes.
+
+// forêt ?
+#q(3)[Montrer que tout interrupteur d'un réseau est un arbre si et seulement si le séquent associé est démontrable.]
+
+Soit $R$ un réseau. On le désoriente et le voit comme un multigraphe.
+Si une seule arête relie deux sommets ou que les deux arêtes les reliant sont initialement des arêtes entrantes d'un $par$,
+on autorise leur fusion (leurs incidences sont aussi fusionnées).
+On dit que $R$ est contractile si après une séquence de contractions le réseau devient un unique sommet.
+
+#q(3)[Montrer qu'un réseau est contractile si et seulement si le séquent associé est démontrable.]
